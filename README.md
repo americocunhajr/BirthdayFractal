@@ -41,20 +41,16 @@ The paper's research-grade Python code, high-resolution figures, and exact certi
 
 ## Citation
 
-Please cite the mathematical article for results, proofs, and figures:
-
-> Americo Cunha Jr. “Birthday Polynomials and the Boundaries of Newton's Method.” Manuscript submitted to *The Mathematical Intelligencer*, 2026.
+Americo Cunha Jr. “Birthday Polynomials and the Boundaries of Newton's Method.” Manuscript under review at *The Mathematical Intelligencer*, 2026.
 
 ```bibtex
-@unpublished{CunhaJr2026BirthdayPolynomials,
-  author = {Cunha Jr., Americo},
+@unpublished{cunha2026birthdaypolynomials,
+  author = {Cunha Jr, Americo},
   title  = {Birthday Polynomials and the Boundaries of Newton's Method},
-  note   = {Manuscript submitted to The Mathematical Intelligencer},
+  note   = {Manuscript under review at The Mathematical Intelligencer},
   year   = {2026}
 }
 ```
-
-The public [How to cite](https://americocunhajr.github.io/BirthdayFractal/#cite) section displays this entry. The software itself is cited separately via [`CITATION.cff`](CITATION.cff).
 
 ## Author
 

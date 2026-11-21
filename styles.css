@@ -4,18 +4,13 @@
 .brand-symbol{border:0;background:transparent;box-shadow:none;padding:0;display:block;width:40px;height:40px}.brand-symbol img{display:block;width:40px;height:40px;object-fit:contain}
 
 
-/* Article-first citation and concise project profile */
+/* Minimal manuscript citation, consistent with NeuralMath. */
 .citation-section{background:#101a29;border-top:1px solid #26374c;border-bottom:1px solid #26374c}
-.citation-container{max-width:1080px}.citation-section h2{margin:10px 0 25px}
-.cite-lead{font-size:clamp(17px,2vw,22px);color:#e9e5e0;line-height:1.75;max-width:900px;margin-bottom:12px}
-.cite-instruction{max-width:900px;font-size:14px;line-height:1.8;color:#a7b9c9;margin-bottom:30px}
-.cite-format-row{display:flex;justify-content:space-between;align-items:center;gap:15px;max-width:900px;margin-bottom:11px}
-.cite-button{border:1px solid #5a6b7b;background:#1f3145;color:#eadfd2;padding:10px 14px;border-radius:7px;font-size:12px;font-weight:700}
-.cite-button:hover{background:#34495d}
-.citation-code{max-width:900px;margin:0;border:1px solid #394e64;border-radius:9px;padding:23px;background:#0a1220;color:#e2d7cb;overflow:auto;font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}
+.citation-container{max-width:1080px}
+.citation-section h2{font-size:clamp(2rem,3.5vw,3.1rem);margin:0 0 22px}
+.cite-lead{font-size:16px;color:#e9e5e0;line-height:1.8;max-width:900px;margin:0 0 22px}
+.citation-code{max-width:900px;margin:0;border:1px solid #394e64;border-radius:9px;padding:22px;background:#0a1220;color:#e2d7cb;overflow:auto;font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}
 .citation-code code{font:inherit;white-space:pre}
-.cite-secondary{display:flex;align-items:center;justify-content:space-between;gap:25px;max-width:900px;margin-top:26px;padding-top:23px;border-top:1px solid #2b3c50}
-.cite-secondary strong{font-size:14px;color:#eee7df}.cite-secondary p{font-size:12px;line-height:1.7;margin:7px 0 0}.cite-secondary button{flex-shrink:0}
 .about-section{background:radial-gradient(ellipse at 80% 85%,#21364b4d,transparent 60%),#090e17}
 .about-section h2{margin-bottom:34px}
 .about-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(210px,.7fr);gap:8%;align-items:start}
