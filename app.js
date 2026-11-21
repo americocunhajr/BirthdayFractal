@@ -36,3 +36,26 @@ const tasks=[...$("galleryGrid").children];(async()=>{for(let i=0;i<tasks.length
 $("gallerySearch").oninput=()=>{visibleDates=12;populateGallery()};$("showAll").onclick=()=>{visibleDates=38;populateGallery()};
 (async()=>{try{const co=coeffs("25/12/1642"),roots=rootsOf(co),view=bounds(roots);const hero=await render({co,roots,view,width:500,height:500,palette:"aurora",maxIter:80});if(!hero.error)paint($("heroCanvas"),hero,roots,view)}catch{}})();
 generate(true);populateGallery();
+/* Citation controls are independent of the canvas renderer. */
+const citationStrings={
+ plain:"Cunha Jr., A. (2026). BirthdayFractal: Newton fractals from calendar dates [Computer software]. GitHub. https://github.com/americocunhajr/BirthdayFractal",
+ bibtex:"@misc{CunhaJr2026BirthdayFractal,\n  author       = {Cunha Jr., Americo},\n  title        = {BirthdayFractal: Newton Fractals from Calendar Dates},\n  year         = {2026},\n  howpublished = {Computer software},\n  url          = {https://github.com/americocunhajr/BirthdayFractal}\n}"
+};
+document.querySelectorAll("[data-copy-citation]").forEach((button)=>{
+ button.addEventListener("click",async()=>{
+  const value=citationStrings[button.dataset.copyCitation];
+  const original=button.innerHTML;
+  try{
+   if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value);}
+   else{
+    const area=document.createElement("textarea");area.value=value;area.style.position="fixed";area.style.opacity="0";
+    document.body.appendChild(area);area.select();if(!document.execCommand("copy"))throw new Error("Copy unavailable");area.remove();
+   }
+   button.textContent="Copied!";
+  }catch{
+   window.prompt("Copy this citation:",value);
+   button.textContent="Select and copy";
+  }
+  setTimeout(()=>{button.innerHTML=original},2000);
+ });
+});

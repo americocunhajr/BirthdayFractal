@@ -41,4 +41,12 @@ The paper's research-grade Python code, high-resolution figures, and exact certi
 
 ## Citation
 
-See `CITATION.cff`.
+Please cite the software as:
+
+> Cunha Jr., A. (2026). BirthdayFractal: Newton fractals from calendar dates [Computer software]. GitHub. https://github.com/americocunhajr/BirthdayFractal
+
+BibTeX and citation copy controls are available at the [How to cite](https://americocunhajr.github.io/BirthdayFractal/#cite) section of the website. The machine-readable metadata is in [`CITATION.cff`](CITATION.cff). Cite the associated mathematical paper separately when its bibliographic details become available.
+
+## Author
+
+**Americo Cunha Jr.** is Research Faculty at the National Laboratory for Scientific Computing (LNCC) and Professor of Applied and Computational Mathematics at Rio de Janeiro State University (UERJ), Brazil. See [his academic website](https://americocunha.org/) or the [About the author](https://americocunhajr.github.io/BirthdayFractal/#author) section.
