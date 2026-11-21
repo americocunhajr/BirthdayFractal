@@ -5,112 +5,71 @@
 
 
 
-/* Closing author and citation — shared editorial styling with the rest of BirthdayFractal. */
-.endmatter-about{
-  padding-top:103px;
-  padding-bottom:55px;
-  background:radial-gradient(ellipse at 7% 20%,rgba(70,96,121,.16),transparent 52%),#0c1420;
+
+/* Closing sections: compact paper citation followed by the original author layout. */
+.citation-section{
+  padding-top:75px;
+  padding-bottom:68px;
+  background:#0c1420;
   border-top:1px solid #25344b;
 }
-.endmatter-heading{margin-bottom:37px}
-.endmatter-heading h2{margin-top:13px}
-.author-feature{
-  display:grid;
-  grid-template-columns:minmax(210px,.74fr) minmax(0,1.26fr);
-  gap:clamp(26px,5vw,72px);
-  align-items:center;
-  padding:clamp(22px,3.5vw,39px);
-  border:1px solid #314258;
-  border-radius:14px;
-  background:linear-gradient(145deg,#172538,#101b2a 76%);
-  box-shadow:0 26px 70px rgba(0,0,0,.14);
+.citation-section h2{
+  font-size:clamp(1.65rem,2.5vw,2.05rem);
+  line-height:1.25;
+  letter-spacing:-.025em;
+  margin:12px 0 21px;
 }
-.author-feature-photo{margin:0;overflow:hidden;border-radius:10px;border:1px solid #3d5065;background:#1c2c3e}
-.author-feature-photo img{display:block;width:100%;height:auto;aspect-ratio:4/4.4;object-fit:cover;object-position:center}
-.author-feature-photo figcaption{
-  padding:12px 14px;
-  color:#d9b394;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.1px;
-  background:#101b2a;
+.citation-reference{
+  max-width:950px;
+  color:#cbd5df;
+  font-size:14px;
+  line-height:1.85;
+  margin:0 0 24px;
 }
-.author-feature-content h3{
-  font-family:'Playfair Display',Georgia,serif;
-  font-weight:500;
-  font-size:clamp(2rem,3.1vw,3.05rem);
-  letter-spacing:-.035em;
-  line-height:1.19;
-  margin:12px 0 10px;
-}
-.author-feature-role{
-  color:#f1c3a0;
-  font-size:13px;
-  font-weight:600;
-  line-height:1.75;
-  margin-bottom:21px;
-}
-.author-feature-content>p:not(.eyebrow):not(.author-feature-role){font-size:13px;line-height:1.95;color:#b5c4d3;margin-bottom:15px}
-.author-feature-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.author-feature-links a{
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  border:1px solid #40566b;
-  background:#1b2a3c;
-  color:#e6edf4;
-  border-radius:7px;
-  padding:9px 12px;
-  font-size:11px;
-  font-weight:700;
-  transition:background .16s,border-color .16s;
-}
-.author-feature-links a span{color:#edba95}
-.author-feature-links a:hover{background:#293c51;border-color:#8b9caf}
-.endmatter-citation{
-  padding-top:53px;
-  padding-bottom:94px;
-  background:#0c1420;
-}
-.citation-feature{
-  display:grid;
-  grid-template-columns:minmax(250px,.88fr) minmax(0,1.12fr);
-  gap:clamp(28px,5vw,65px);
-  align-items:start;
-  border-top:1px solid #35465b;
-  padding-top:50px;
-}
-.citation-feature-intro h2{font-size:clamp(2.3rem,3.6vw,3.7rem);margin:14px 0 21px}
-.citation-feature-intro>p:last-child{font-size:14px;line-height:1.9;color:#c1cbd6;max-width:500px}
-.citation-feature-intro cite{color:#f0c19d}
-.citation-feature-code{
-  min-width:0;
-  border:1px solid #35495f;
-  border-radius:12px;
-  background:linear-gradient(155deg,#152337,#0e1827);
-  padding:25px 26px 24px;
-}
-.citation-feature-code>.microtitle{color:#efb991;display:block;margin-bottom:19px}
-.bib-divider{padding:0 7px;color:#8ea3b5}
-.citation-feature-code pre{
+.citation-reference cite{color:#f0c29e}
+.citation-bibtex{
+  max-width:950px;
+  overflow-x:auto;
   margin:0;
-  overflow:auto;
-  white-space:pre;
-  font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;
-  color:#dce7f1;
+  padding:23px 27px;
+  border:1px solid #3b5066;
+  border-radius:12px;
+  background:linear-gradient(145deg,#152337,#0e1827);
+  color:#e3edf4;
+  font:12px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;
+  box-shadow:0 12px 36px rgba(0,0,0,.12);
 }
-.citation-feature-code pre code{font:inherit}
-@media(max-width:800px){
-  .author-feature{grid-template-columns:minmax(170px,.8fr) minmax(0,1.2fr);gap:24px}
-  .citation-feature{grid-template-columns:1fr;gap:16px}
+.citation-bibtex code{font:inherit;white-space:pre}
+.author-section{background:radial-gradient(ellipse at 90% 80%,#1f35424d,transparent 60%),#090e17}
+.author-card{display:grid;grid-template-columns:minmax(220px,.72fr) 1.28fr;gap:58px;align-items:center}
+.author-image{position:relative;overflow:hidden;min-height:430px;max-height:535px;border-radius:14px;border:1px solid #3e5269;background:linear-gradient(140deg,#263950,#172334)}
+.author-image img{display:block;width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center}
+.author-image:after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#08111db8);pointer-events:none}
+.author-image-label{position:absolute;bottom:23px;left:24px;right:20px;z-index:1;color:#f2d0b2;font-size:10px;letter-spacing:1.7px;font-weight:700}
+.author-content h2{margin:12px 0 24px;font-size:clamp(1.65rem,2.5vw,2.05rem);letter-spacing:-.025em;line-height:1.2}
+.author-content h3{font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:-.55px;margin:0 0 6px}
+.author-role{font-size:12px;font-weight:600;color:#e6b795;line-height:1.75;margin-bottom:23px}
+.author-content>p:not(.eyebrow):not(.author-role){font-size:14px;line-height:1.9}
+.author-links{display:flex;align-items:center;flex-wrap:wrap;gap:24px;margin-top:26px}
+.author-text-link{font-size:13px;font-weight:700;color:#d3ddea;border-bottom:1px solid #6d7e8d;padding-bottom:2px}
+.author-text-link:hover{color:#f3b88e}
+
+.author-section{
+  padding-top:75px;
+  padding-bottom:100px;
+  border-top:1px solid #26374c;
+  background:radial-gradient(ellipse at 90% 80%,#1f35424d,transparent 60%),#090e17;
 }
-@media(max-width:620px){
-  .endmatter-about{padding-top:72px;padding-bottom:28px}
-  .endmatter-citation{padding-top:22px;padding-bottom:72px}
-  .author-feature{grid-template-columns:1fr;padding:20px}
-  .author-feature-photo{max-width:300px}
-  .author-feature-content h3{font-size:2.15rem}
-  .citation-feature{padding-top:32px}
-  .citation-feature-code{padding:19px 16px}
-  .citation-feature-code pre{font-size:11px}
+.author-card{gap:clamp(28px,5vw,58px)}
+.author-content h3{font-size:23px}
+@media(max-width:860px){
+  .author-card{gap:32px;grid-template-columns:minmax(200px,.8fr) 1.2fr}
+}
+@media(max-width:720px){
+  .citation-section{padding-top:61px;padding-bottom:62px}
+  .citation-bibtex{padding:17px 16px;font-size:11px}
+  .author-section{padding-top:64px;padding-bottom:77px}
+  .author-card{grid-template-columns:1fr}
+  .author-image{max-width:430px;min-height:280px}
+  .author-image img{min-height:280px;max-height:440px}
 }
