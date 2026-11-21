@@ -25,15 +25,15 @@ This repository publishes a lightweight, dependency-free **interactive browser e
 
 Serve the files over HTTP (required for the Web Worker):
 
-\`\`\`bash
+```bash
 python -m http.server 8000
-\`\`\`
+```
 
 Visit http://localhost:8000/ .
 
 ## GitHub Pages
 
-A GitHub Actions workflow in \`.github/workflows/pages.yml\` deploys the site on changes to \`main\`. If GitHub Pages is not already enabled, choose **GitHub Actions** as the build/deployment source under **Settings → Pages**.
+A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the site on changes to `main`. If GitHub Pages is not already enabled, choose **GitHub Actions** as the build/deployment source under **Settings → Pages**.
 
 ## Reproducibility
 
@@ -41,4 +41,4 @@ The paper's research-grade Python code, high-resolution figures, and exact certi
 
 ## Citation
 
-See \`CITATION.cff\`.
+See `CITATION.cff`.
