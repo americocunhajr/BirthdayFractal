@@ -3,32 +3,28 @@
 /* Fractal basin emblem shared by browser tab and website header. */
 .brand-symbol{border:0;background:transparent;box-shadow:none;padding:0;display:block;width:40px;height:40px}.brand-symbol img{display:block;width:40px;height:40px;object-fit:contain}
 
-/* Scholarly citation and author profile */
-.citation-section{background:#0e1826;border-top:1px solid #26374c;border-bottom:1px solid #26374c}
-.cite-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.cite-panel{background:linear-gradient(147deg,#162438,#101b29);border:1px solid #3c5068;border-radius:14px;padding:28px;min-width:0;display:flex;flex-direction:column}
-.cite-panel-code{background:linear-gradient(147deg,#172235,#121928)}
-.cite-topline{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:24px}
-.cite-format{font-size:10px;letter-spacing:1.4px;color:#d8b292;border:1px solid #635b5a;border-radius:5px;padding:5px 8px}
-.citation-copy{font-size:16px;line-height:1.9;color:#d8e2ec;overflow-wrap:anywhere;flex:1}
-.citation-copy a{color:#f0bb94;text-decoration:underline;text-underline-offset:3px}
-.cite-copy{align-self:flex-start;margin-top:19px;padding:10px 14px;min-height:40px}
-.bibtex{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;color:#dce5ee;font-size:12px;line-height:1.8;flex:1;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
-.bibtex code{font-family:inherit}
-.citation-footnote{font-size:12px;color:#8da3b8;margin:19px 0 0;line-height:1.8}
-.citation-footnote a{color:#e4bf9e;text-decoration:underline;text-underline-offset:3px}
-.author-section{background:radial-gradient(ellipse at 90% 80%,#1f35424d,transparent 60%),#090e17}
-.author-card{display:grid;grid-template-columns:minmax(220px,.72fr) 1.28fr;gap:58px;align-items:center}
-.author-image{position:relative;overflow:hidden;min-height:430px;max-height:535px;border-radius:14px;border:1px solid #3e5269;background:linear-gradient(140deg,#263950,#172334)}
-.author-image img{display:block;width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center}
-.author-image:after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#08111db8);pointer-events:none}
-.author-image-label{position:absolute;bottom:23px;left:24px;right:20px;z-index:1;color:#f2d0b2;font-size:10px;letter-spacing:1.7px;font-weight:700}
-.author-content h2{margin-bottom:24px}
-.author-content h3{font-family:'DM Sans',sans-serif;font-size:24px;letter-spacing:-.55px;margin:0 0 6px}
-.author-role{font-size:12px;font-weight:600;color:#e6b795;line-height:1.75;margin-bottom:23px}
-.author-content>p:not(.eyebrow):not(.author-role){font-size:14px;line-height:1.9}
-.author-links{display:flex;align-items:center;flex-wrap:wrap;gap:24px;margin-top:26px}
-.author-text-link{font-size:13px;font-weight:700;color:#d3ddea;border-bottom:1px solid #6d7e8d;padding-bottom:2px}
-.author-text-link:hover{color:#f3b88e}
-@media(max-width:860px){.cite-layout{grid-template-columns:1fr}.author-card{gap:32px;grid-template-columns:minmax(200px,.8fr) 1.2fr}.nav nav{gap:12px}}
-@media(max-width:720px){.author-card{grid-template-columns:1fr}.author-image{max-width:430px;min-height:280px}.author-image img{min-height:280px;max-height:440px}.cite-panel{padding:22px}.cite-topline{margin-bottom:15px}.nav nav a{display:none}.nav nav a:nth-child(2),.nav nav a:nth-child(5){display:inline-block}}
+
+/* Article-first citation and concise project profile */
+.citation-section{background:#101a29;border-top:1px solid #26374c;border-bottom:1px solid #26374c}
+.citation-container{max-width:1080px}.citation-section h2{margin:10px 0 25px}
+.cite-lead{font-size:clamp(17px,2vw,22px);color:#e9e5e0;line-height:1.75;max-width:900px;margin-bottom:12px}
+.cite-instruction{max-width:900px;font-size:14px;line-height:1.8;color:#a7b9c9;margin-bottom:30px}
+.cite-format-row{display:flex;justify-content:space-between;align-items:center;gap:15px;max-width:900px;margin-bottom:11px}
+.cite-button{border:1px solid #5a6b7b;background:#1f3145;color:#eadfd2;padding:10px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.cite-button:hover{background:#34495d}
+.citation-code{max-width:900px;margin:0;border:1px solid #394e64;border-radius:9px;padding:23px;background:#0a1220;color:#e2d7cb;overflow:auto;font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}
+.citation-code code{font:inherit;white-space:pre}
+.cite-secondary{display:flex;align-items:center;justify-content:space-between;gap:25px;max-width:900px;margin-top:26px;padding-top:23px;border-top:1px solid #2b3c50}
+.cite-secondary strong{font-size:14px;color:#eee7df}.cite-secondary p{font-size:12px;line-height:1.7;margin:7px 0 0}.cite-secondary button{flex-shrink:0}
+.about-section{background:radial-gradient(ellipse at 80% 85%,#21364b4d,transparent 60%),#090e17}
+.about-section h2{margin-bottom:34px}
+.about-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(210px,.7fr);gap:8%;align-items:start}
+.about-lead{font-size:18px;line-height:1.85;color:#e6e6e2}.about-text>p:not(.about-lead){font-size:14px;line-height:1.95}
+.about-text strong{color:#f5e5d7}.about-divider{height:1px;background:#2f4357;margin:27px 0 25px}
+.about-text h3{font:500 25px/1.2 Georgia,serif;letter-spacing:-.2px;margin:0 0 15px}
+.about-links{display:flex;flex-wrap:wrap;gap:12px 19px;margin-top:25px}.about-links a{color:#eac3a5;font-size:12px;font-weight:700;border-bottom:1px solid #6a7d92;padding-bottom:4px}
+.about-links a:hover{color:#fff}
+.about-portrait{border:1px solid #40556b;border-radius:12px;overflow:hidden;background:#1a2a3e}
+.about-portrait img{display:block;width:100%;height:auto;min-height:280px;max-height:390px;object-fit:cover;object-position:center}
+.about-portrait span{display:block;padding:13px 18px;font-size:10px;letter-spacing:1px;color:#e9c0a2;background:#152235;font-weight:700}
+@media(max-width:720px){.cite-lead{font-size:17px}.cite-secondary{align-items:flex-start;flex-direction:column}.about-layout{grid-template-columns:1fr}.about-portrait{max-width:340px}.citation-code{font-size:11px;padding:15px}.citation-section,.about-section{padding-top:70px;padding-bottom:78px}}

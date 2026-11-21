@@ -7,7 +7,7 @@
 </head><body>
 <header class="site-header"><div class="container nav">
 <a href="#home" class="logo"><span class="brand-symbol"><img src="favicon.svg" alt="" width="40" height="40"></span><span><strong>BirthdayFractal</strong><small>Mathematical landscapes</small></span></a>
-<nav aria-label="Main navigation"><a href="#studio">Create</a><a href="#gallery">Gallery</a><a href="#mathematics">Mathematics</a><a href="#research">Research</a><a href="#cite">Cite</a><a href="#author">Author</a><a href="https://github.com/americocunhajr/BirthdayFractal" target="_blank" rel="noopener">GitHub ↗</a></nav>
+<nav aria-label="Main navigation"><a href="#studio">Create</a><a href="#gallery">Gallery</a><a href="#mathematics">Mathematics</a><a href="#research">Research</a><a href="#cite">Cite</a><a href="#author">About</a><a href="https://github.com/americocunhajr/BirthdayFractal" target="_blank" rel="noopener">GitHub ↗</a></nav>
 </div></header>
 <main>
 <section id="home" class="hero container">
@@ -19,6 +19,19 @@
 <div class="hero-foot"><span><strong>38</strong> historical dates</span><span><strong>3</strong> propositions</span><span><strong>∞</strong> boundaries</span></div></div>
 <div class="hero-visual"><div class="visual-frame"><div class="visual-top"><span class="three-dots"><i></i><i></i><i></i></span><span>NEWTON ATTRACTION BASINS</span><span class="orbit-icon">✳</span></div><canvas id="heroCanvas" width="500" height="500" aria-label="Newton fractal for 25 December 1642"></canvas><div class="visual-foot"><span>25.12.1642</span><span>JULIAN CALENDAR</span></div></div><div class="hero-halo"></div></div>
 </section>
+<section id="cite" class="section citation-section"><div class="container citation-container">
+<p class="eyebrow">THE COMPANION ARTICLE</p><h2>How to cite<br><em>this material.</em></h2>
+<p class="cite-lead">Americo Cunha Jr. <cite>“Birthday Polynomials and the Boundaries of Newton’s Method.”</cite> Manuscript submitted to <cite>The Mathematical Intelligencer</cite>, 2026.</p>
+<p class="cite-instruction">Please cite the mathematical article when referring to its results, proofs, and illustrations. The bibliographic entry will be updated with publication details when available.</p>
+<div class="cite-format-row"><span class="microtitle">BIBTEX · ARTICLE</span><button class="cite-button" type="button" data-copy-citation="bibtex">Copy BibTeX ↗</button></div>
+<pre class="citation-code"><code>@unpublished{CunhaJr2026BirthdayPolynomials,
+  author = {Cunha Jr., Americo},
+  title  = {Birthday Polynomials and the Boundaries of Newton's Method},
+  note   = {Manuscript submitted to The Mathematical Intelligencer},
+  year   = {2026}
+}</code></pre>
+<div class="cite-secondary"><div><strong>Using the interactive generator?</strong><p>The software may be cited separately when using its browser implementation.</p></div><button class="cite-button" type="button" data-copy-citation="software">Copy software citation ↗</button></div>
+</div></section>
 <section class="numbers"><div class="container number-grid"><div><span>01 /</span><h2>Digits</h2><p>The date determines the coefficients.</p></div><div><span>02 /</span><h2>Iteration</h2><p>Each complex starting point follows Newton’s map.</p></div><div><span>03 /</span><h2>Geometry</h2><p>Roots attract regions separated by the Julia set.</p></div></div></section>
 <section id="studio" class="section container"><div class="section-head"><div><p class="eyebrow">INTERACTIVE LABORATORY</p><h2>Create your own<br><em>Newton fractal.</em></h2></div><p>Choose a date, render its attraction basins, and explore the complex plane. Zoom into the boundary to discover finer structures.</p></div>
 <div class="studio"><aside class="controls">
@@ -37,38 +50,21 @@
 <div class="math-grid"><article class="math-card"><span class="card-number">PROPOSITION 01</span><h3>An isolated negative root</h3><p>For dates in years 1000–2999 with day 15–19 or 27–29, exactly one root lies outside the disk |z| &lt; 5/2. It is real, negative, and simple.</p><span class="math-tag">Rouché’s theorem</span></article><article class="math-card"><span class="card-number">PROPOSITION 02</span><h3>Dynamics on the positive axis</h3><p>For polynomials with nonnegative coefficients, a root at zero attracts every positive real starting point. When p(0) &gt; 0, every such orbit eventually leaves the positive half-line.</p><span class="math-tag">Global convergence</span></article><article class="math-card emphasis"><span class="card-number">PROPOSITION 03 · COROLLARY 01</span><h3>When Newton does not converge</h3><p>Mandelbrot’s birthday polynomial exchanges two real intervals without approaching a root. Within these intervals lies a repelling period-two orbit.</p><div class="intervals">K₋ = [−0.7626, −0.6240]<br>K₊ = [0.1580, 0.2012]</div><span class="math-tag">Exact computer-assisted verification</span></article></div></section>
 <section id="research" class="section research-section"><div class="container research-grid"><div><p class="eyebrow">THE RESEARCH COMPANION</p><h2>From visualization<br><em>to verification.</em></h2><p class="research-lead">BirthdayFractal accompanies <cite>Birthday Polynomials and the Boundaries of Newton’s Method</cite>, combining accessible visual exploration with a mathematically rigorous study of Newton maps.</p><a class="btn outline" href="https://github.com/americocunhajr/BirthdayFractal" target="_blank" rel="noopener">Explore the open-source project ↗</a></div><div class="research-note"><span>COMPUTATION & PROOF</span><h3>Two complementary approaches</h3><p>The interactive studio provides approximate, double-precision pictures computed on your device. The mathematical results of the paper rely on analytical arguments and separate exact-arithmetic certificates.</p><p>The complete scientific manuscript, data, and certified computations are maintained as part of the research package; the live generator is an educational companion, not a substitute for those verifications.</p></div></div></section>
 
-<section id="cite" class="section citation-section"><div class="container">
-  <div class="section-head"><div><p class="eyebrow">CITATION & ATTRIBUTION</p><h2>How to cite<br><em>BirthdayFractal.</em></h2></div>
-    <p>If you use BirthdayFractal in a publication, teaching material, or presentation, please cite the software. For results from the companion mathematical article, cite that paper separately when its publication details are available.</p></div>
-  <div class="cite-layout">
-    <article class="cite-panel"><div class="cite-topline"><span class="microtitle">RECOMMENDED CITATION</span><span class="cite-format">PLAIN TEXT</span></div>
-      <p id="citationText" class="citation-copy">Cunha Jr., A. (2026). <cite>BirthdayFractal: Newton fractals from calendar dates</cite> [Computer software]. GitHub. <a href="https://github.com/americocunhajr/BirthdayFractal" target="_blank" rel="noopener">https://github.com/americocunhajr/BirthdayFractal</a></p>
-      <button class="action cite-copy" type="button" data-copy-citation="plain" aria-label="Copy recommended citation">Copy citation <span aria-hidden="true">↗</span></button>
-    </article>
-    <article class="cite-panel cite-panel-code"><div class="cite-topline"><span class="microtitle">BIBLIOGRAPHIC ENTRY</span><span class="cite-format">BIBTEX</span></div>
-      <pre class="bibtex" id="bibtexText"><code>@misc{CunhaJr2026BirthdayFractal,
-  author       = {Cunha Jr., Americo},
-  title        = {BirthdayFractal: Newton Fractals
-                  from Calendar Dates},
-  year         = {2026},
-  howpublished = {Computer software},
-  url          = {https://github.com/americocunhajr/BirthdayFractal}
-}</code></pre>
-      <button class="action cite-copy" type="button" data-copy-citation="bibtex" aria-label="Copy BibTeX entry">Copy BibTeX <span aria-hidden="true">↗</span></button>
-    </article>
-  </div>
-  <p class="citation-footnote">For precise reproducibility, identify the release or commit used. GitHub also provides machine-readable citation metadata in <a href="https://github.com/americocunhajr/BirthdayFractal/blob/main/CITATION.cff" target="_blank" rel="noopener"><code>CITATION.cff</code> ↗</a>.</p>
-</div></section>
-<section id="author" class="section author-section"><div class="container">
- <div class="author-card">
-  <div class="author-image"><img src="https://americocunha.org/images/americo.jpg" width="460" height="490" loading="lazy" alt="Portrait of Americo Cunha Jr."><span class="author-image-label">MATHEMATICS · DYNAMICS · COMPUTATION</span></div>
-  <div class="author-content"><p class="eyebrow">THE PERSON BEHIND THE PROJECT</p><h2>About<br><em>the author.</em></h2>
-    <h3>Americo Cunha Jr.</h3><p class="author-role">Research Faculty, LNCC · Professor of Applied and Computational Mathematics, UERJ</p>
-    <p>Americo Cunha Jr. works at the intersection of applied mathematics, computational science, and engineering. His research includes nonlinear dynamics, uncertainty quantification, computational mechanics, scientific machine learning, and data-driven modeling, with applications to metamaterials, energy harvesting, intelligent structures, and mathematical epidemiology.</p>
-    <p>BirthdayFractal brings together mathematical history, numerical experimentation, complex dynamics, and scientific visualization in an interactive form.</p>
-    <div class="author-links"><a class="btn outline" href="https://americocunha.org/" target="_blank" rel="noopener">Academic website ↗</a><a class="author-text-link" href="https://github.com/americocunhajr" target="_blank" rel="noopener">GitHub profile ↗</a></div>
-  </div>
- </div>
-</div></section>
+
+<section id="author" class="section about-section"><div class="container">
+<p class="eyebrow">THE PROJECT AND ITS AUTHOR</p><h2>About<br><em>BirthdayFractal.</em></h2>
+<div class="about-layout"><div class="about-text">
+<p class="about-lead">BirthdayFractal is an open mathematical visualization project developed by <strong>Americo Cunha Jr.</strong> as a companion to <cite>Birthday Polynomials and the Boundaries of Newton’s Method</cite>.</p>
+<p>By turning the digits of calendar dates into polynomial coefficients, the project reveals Newton attraction basins and their Julia-set boundaries. It connects mathematical history, numerical experimentation, complex dynamics, and interactive visualization.</p>
+<div class="about-divider"></div><h3>About the author</h3>
+<p>Americo Cunha Jr. is Research Faculty at the National Laboratory for Scientific Computing (LNCC) and Professor of Applied and Computational Mathematics at Rio de Janeiro State University (UERJ), Brazil. His research spans nonlinear dynamics, uncertainty quantification, computational mechanics, and scientific machine learning.</p>
+<nav class="about-links" aria-label="Academic profiles">
+<a href="https://americocunha.org/" target="_blank" rel="noopener">Personal website ↗</a>
+<a href="https://orcid.org/0000-0002-8342-0363" target="_blank" rel="noopener">ORCID ↗</a>
+<a href="https://scholar.google.com/citations?user=4r36RpoAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
+<a href="https://github.com/americocunhajr" target="_blank" rel="noopener">GitHub ↗</a>
+</nav></div>
+<aside class="about-portrait"><img src="https://americocunha.org/images/americo.jpg" width="460" height="490" loading="lazy" alt="Portrait of Americo Cunha Jr."><span>AMERICO CUNHA JR. · LNCC / UERJ</span></aside>
+</div></div></section>
 </main><footer><div class="container footer-grid"><div><div class="footer-logo">✳ BirthdayFractal</div><p>Mathematical landscapes from dates.</p></div><div><p>A companion to <cite>Birthday Polynomials and the Boundaries of Newton’s Method</cite></p><p>© Americo Cunha Jr. · LNCC / UERJ</p></div><a href="#home" class="back-to-top">Back to top ↑</a></div></footer>
 <script src="app.js" defer></script></body></html>

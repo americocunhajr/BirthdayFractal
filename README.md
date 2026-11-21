@@ -41,11 +41,20 @@ The paper's research-grade Python code, high-resolution figures, and exact certi
 
 ## Citation
 
-Please cite the software as:
+Please cite the mathematical article for results, proofs, and figures:
 
-> Cunha Jr., A. (2026). BirthdayFractal: Newton fractals from calendar dates [Computer software]. GitHub. https://github.com/americocunhajr/BirthdayFractal
+> Americo Cunha Jr. “Birthday Polynomials and the Boundaries of Newton's Method.” Manuscript submitted to *The Mathematical Intelligencer*, 2026.
 
-BibTeX and citation copy controls are available at the [How to cite](https://americocunhajr.github.io/BirthdayFractal/#cite) section of the website. The machine-readable metadata is in [`CITATION.cff`](CITATION.cff). Cite the associated mathematical paper separately when its bibliographic details become available.
+```bibtex
+@unpublished{CunhaJr2026BirthdayPolynomials,
+  author = {Cunha Jr., Americo},
+  title  = {Birthday Polynomials and the Boundaries of Newton's Method},
+  note   = {Manuscript submitted to The Mathematical Intelligencer},
+  year   = {2026}
+}
+```
+
+The public [How to cite](https://americocunhajr.github.io/BirthdayFractal/#cite) section displays this entry. The software itself is cited separately via [`CITATION.cff`](CITATION.cff).
 
 ## Author
 

@@ -38,8 +38,10 @@ $("gallerySearch").oninput=()=>{visibleDates=12;populateGallery()};$("showAll").
 generate(true);populateGallery();
 /* Citation controls are independent of the canvas renderer. */
 const citationStrings={
- plain:"Cunha Jr., A. (2026). BirthdayFractal: Newton fractals from calendar dates [Computer software]. GitHub. https://github.com/americocunhajr/BirthdayFractal",
- bibtex:"@misc{CunhaJr2026BirthdayFractal,\n  author       = {Cunha Jr., Americo},\n  title        = {BirthdayFractal: Newton Fractals from Calendar Dates},\n  year         = {2026},\n  howpublished = {Computer software},\n  url          = {https://github.com/americocunhajr/BirthdayFractal}\n}"
+  paper:"Cunha Jr., A. (2026). Birthday Polynomials and the Boundaries of Newton's Method. Manuscript submitted to The Mathematical Intelligencer.",
+  bibtex:"@unpublished{CunhaJr2026BirthdayPolynomials,\n  author = {Cunha Jr., Americo},\n  title  = {Birthday Polynomials and the Boundaries of Newton's Method},\n  note   = {Manuscript submitted to The Mathematical Intelligencer},\n  year   = {2026}\n}",
+  software:"Cunha Jr., A. (2026). BirthdayFractal: Newton fractals from calendar dates [Computer software]. GitHub. https://github.com/americocunhajr/BirthdayFractal"
+
 };
 document.querySelectorAll("[data-copy-citation]").forEach((button)=>{
  button.addEventListener("click",async()=>{
