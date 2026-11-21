@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the associated mathematical article and this repository when reusing the software."
+type: software
+title: "BirthdayFractal: Newton fractals from calendar dates"
+authors:
+  - family-names: Cunha Jr.
+    given-names: Americo
+repository-code: "https://github.com/americocunhajr/BirthdayFractal"
+url: "https://americocunhajr.github.io/BirthdayFractal/"
+abstract: "A dark-themed interactive companion to Birthday Polynomials and the Boundaries of Newton's Method."
