@@ -4,22 +4,113 @@
 .brand-symbol{border:0;background:transparent;box-shadow:none;padding:0;display:block;width:40px;height:40px}.brand-symbol img{display:block;width:40px;height:40px;object-fit:contain}
 
 
-/* Minimal manuscript citation, consistent with NeuralMath. */
-.citation-section{background:#101a29;border-top:1px solid #26374c;border-bottom:1px solid #26374c}
-.citation-container{max-width:1080px}
-.citation-section h2{font-size:clamp(2rem,3.5vw,3.1rem);margin:0 0 22px}
-.cite-lead{font-size:16px;color:#e9e5e0;line-height:1.8;max-width:900px;margin:0 0 22px}
-.citation-code{max-width:900px;margin:0;border:1px solid #394e64;border-radius:9px;padding:22px;background:#0a1220;color:#e2d7cb;overflow:auto;font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}
-.citation-code code{font:inherit;white-space:pre}
-.about-section{background:radial-gradient(ellipse at 80% 85%,#21364b4d,transparent 60%),#090e17}
-.about-section h2{margin-bottom:34px}
-.about-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(210px,.7fr);gap:8%;align-items:start}
-.about-lead{font-size:18px;line-height:1.85;color:#e6e6e2}.about-text>p:not(.about-lead){font-size:14px;line-height:1.95}
-.about-text strong{color:#f5e5d7}.about-divider{height:1px;background:#2f4357;margin:27px 0 25px}
-.about-text h3{font:500 25px/1.2 Georgia,serif;letter-spacing:-.2px;margin:0 0 15px}
-.about-links{display:flex;flex-wrap:wrap;gap:12px 19px;margin-top:25px}.about-links a{color:#eac3a5;font-size:12px;font-weight:700;border-bottom:1px solid #6a7d92;padding-bottom:4px}
-.about-links a:hover{color:#fff}
-.about-portrait{border:1px solid #40556b;border-radius:12px;overflow:hidden;background:#1a2a3e}
-.about-portrait img{display:block;width:100%;height:auto;min-height:280px;max-height:390px;object-fit:cover;object-position:center}
-.about-portrait span{display:block;padding:13px 18px;font-size:10px;letter-spacing:1px;color:#e9c0a2;background:#152235;font-weight:700}
-@media(max-width:720px){.cite-lead{font-size:17px}.cite-secondary{align-items:flex-start;flex-direction:column}.about-layout{grid-template-columns:1fr}.about-portrait{max-width:340px}.citation-code{font-size:11px;padding:15px}.citation-section,.about-section{padding-top:70px;padding-bottom:78px}}
+
+/* Closing author and citation — shared editorial styling with the rest of BirthdayFractal. */
+.endmatter-about{
+  padding-top:103px;
+  padding-bottom:55px;
+  background:radial-gradient(ellipse at 7% 20%,rgba(70,96,121,.16),transparent 52%),#0c1420;
+  border-top:1px solid #25344b;
+}
+.endmatter-heading{margin-bottom:37px}
+.endmatter-heading h2{margin-top:13px}
+.author-feature{
+  display:grid;
+  grid-template-columns:minmax(210px,.74fr) minmax(0,1.26fr);
+  gap:clamp(26px,5vw,72px);
+  align-items:center;
+  padding:clamp(22px,3.5vw,39px);
+  border:1px solid #314258;
+  border-radius:14px;
+  background:linear-gradient(145deg,#172538,#101b2a 76%);
+  box-shadow:0 26px 70px rgba(0,0,0,.14);
+}
+.author-feature-photo{margin:0;overflow:hidden;border-radius:10px;border:1px solid #3d5065;background:#1c2c3e}
+.author-feature-photo img{display:block;width:100%;height:auto;aspect-ratio:4/4.4;object-fit:cover;object-position:center}
+.author-feature-photo figcaption{
+  padding:12px 14px;
+  color:#d9b394;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.1px;
+  background:#101b2a;
+}
+.author-feature-content h3{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(2rem,3.1vw,3.05rem);
+  letter-spacing:-.035em;
+  line-height:1.19;
+  margin:12px 0 10px;
+}
+.author-feature-role{
+  color:#f1c3a0;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.75;
+  margin-bottom:21px;
+}
+.author-feature-content>p:not(.eyebrow):not(.author-feature-role){font-size:13px;line-height:1.95;color:#b5c4d3;margin-bottom:15px}
+.author-feature-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.author-feature-links a{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  border:1px solid #40566b;
+  background:#1b2a3c;
+  color:#e6edf4;
+  border-radius:7px;
+  padding:9px 12px;
+  font-size:11px;
+  font-weight:700;
+  transition:background .16s,border-color .16s;
+}
+.author-feature-links a span{color:#edba95}
+.author-feature-links a:hover{background:#293c51;border-color:#8b9caf}
+.endmatter-citation{
+  padding-top:53px;
+  padding-bottom:94px;
+  background:#0c1420;
+}
+.citation-feature{
+  display:grid;
+  grid-template-columns:minmax(250px,.88fr) minmax(0,1.12fr);
+  gap:clamp(28px,5vw,65px);
+  align-items:start;
+  border-top:1px solid #35465b;
+  padding-top:50px;
+}
+.citation-feature-intro h2{font-size:clamp(2.3rem,3.6vw,3.7rem);margin:14px 0 21px}
+.citation-feature-intro>p:last-child{font-size:14px;line-height:1.9;color:#c1cbd6;max-width:500px}
+.citation-feature-intro cite{color:#f0c19d}
+.citation-feature-code{
+  min-width:0;
+  border:1px solid #35495f;
+  border-radius:12px;
+  background:linear-gradient(155deg,#152337,#0e1827);
+  padding:25px 26px 24px;
+}
+.citation-feature-code>.microtitle{color:#efb991;display:block;margin-bottom:19px}
+.bib-divider{padding:0 7px;color:#8ea3b5}
+.citation-feature-code pre{
+  margin:0;
+  overflow:auto;
+  white-space:pre;
+  font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;
+  color:#dce7f1;
+}
+.citation-feature-code pre code{font:inherit}
+@media(max-width:800px){
+  .author-feature{grid-template-columns:minmax(170px,.8fr) minmax(0,1.2fr);gap:24px}
+  .citation-feature{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:620px){
+  .endmatter-about{padding-top:72px;padding-bottom:28px}
+  .endmatter-citation{padding-top:22px;padding-bottom:72px}
+  .author-feature{grid-template-columns:1fr;padding:20px}
+  .author-feature-photo{max-width:300px}
+  .author-feature-content h3{font-size:2.15rem}
+  .citation-feature{padding-top:32px}
+  .citation-feature-code{padding:19px 16px}
+  .citation-feature-code pre{font-size:11px}
+}
