@@ -73,3 +73,7 @@
   .author-image{max-width:430px;min-height:280px}
   .author-image img{min-height:280px;max-height:440px}
 }
+
+/* Consistent code links in the research section */
+.research-actions{display:flex;flex-wrap:wrap;gap:11px;align-items:center}
+.research-actions .btn{flex-shrink:0}

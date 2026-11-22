@@ -37,7 +37,7 @@ A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the site on c
 
 ## Reproducibility
 
-The paper's research-grade Python code, high-resolution figures, and exact certificates are separate from the browser visualization. The original offline package, including article and supplementary resources, should be added in a later release. Do not use browser images as rigorous computational evidence.
+The interactive generator ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The associated scientific Python package includes the source of the article's figures, data tables, and exact certificates. See [Scientific code and reproducibility](CODE.md) for the program inventory, documented workflows, and the distinction between numerical visualizations and proofs.
 
 ## Citation
 
