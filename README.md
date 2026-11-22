@@ -37,7 +37,7 @@ A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the site on c
 
 ## Reproducibility
 
-The interactive generator ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The associated scientific Python package includes the source of the article's figures, data tables, and exact certificates. See [Scientific code and reproducibility](CODE.md) for the program inventory, documented workflows, and the distinction between numerical visualizations and proofs.
+The interactive generator ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The associated scientific Python package includes the source of the article's figures, data tables, and exact certificates. The full reproducibility material is in [`research/ESM_2/`](research/ESM_2/), with the [author's documented reproduction commands](research/ESM_2/README.md), input data, exact certificates, and Python source. See [Scientific code and reproducibility](CODE.md) for an overview and the distinction between numerical visualizations and proofs.
 
 ## Citation
 

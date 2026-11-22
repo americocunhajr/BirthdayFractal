@@ -9,7 +9,7 @@ BirthdayFractal has two separate computational implementations:
 
 ## Python research package
 
-The author supplied an archive named `ESM_2.zip`, whose contents include 14 Python programs, a LaTeX supplementary document, a 38-date CSV, four JSON records, and an audit text file. This package is being organized under `research/ESM_2/` with its original detailed README, a requirements file, and a reproduction guide.
+The author supplied an archive named `ESM_2.zip`, whose contents include 14 Python programs, a LaTeX supplementary document, a 38-date CSV, four JSON records, and an audit text file. The complete author-supplied source is published under [`research/ESM_2/`](research/ESM_2/), including its detailed [README](research/ESM_2/README.md), [requirements](research/ESM_2/requirements.txt), audit data, and supplementary material.
 
 Key programs:
 
@@ -22,6 +22,21 @@ Key programs:
 - `esm/ESM_1.tex`: Online Resource 1 manuscript source.
 
 The supplied README documents the complete execution order, dependencies, and a glossary of Portuguese identifiers.
+
+## Reproduce the certified results
+
+Use Python 3.13 (the original environment used Python 3.13.16). From the repository root:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # On Windows: .venv\\Scripts\\activate
+python -m pip install -r research/ESM_2/requirements.txt
+cd research/ESM_2
+python certifica_aprisionamento.py
+python certifica_mandelbrot.py
+```
+
+Both scripts produce JSON files that contain the field `"certificado": true` when the stated exact/interval verification conditions succeed. Other scripts produce figures, numerical audits, and supplementary tables. **For the complete order of execution and output inventory**, consult the [original research README](research/ESM_2/README.md).
 
 ## Scientific validation
 
