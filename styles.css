@@ -77,3 +77,18 @@
 /* Consistent code links in the research section */
 .research-actions{display:flex;flex-wrap:wrap;gap:11px;align-items:center}
 .research-actions .btn{flex-shrink:0}
+
+/* Static research date links: HTML anchors supplement the interactive gallery. */
+.intro-lead{color:#f2c39c;font-weight:700}
+.featured-date-links{margin-top:61px;padding-top:33px;border-top:1px solid #34465a}
+.featured-date-links h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);margin:9px 0}
+.featured-date-links>p:not(.eyebrow){font-size:13px;color:#a8bbcc;margin:0 0 24px}
+.featured-date-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}
+.featured-date{border:1px solid #354a60;background:#17263b;padding:17px 13px;border-radius:10px;display:flex;flex-direction:column;gap:9px}
+.featured-date:hover{background:#213449;border-color:#a5a9b6}
+.featured-date>span{font-size:11px;color:#e9bd9c}
+.featured-date strong{font-size:14px;color:#e6eef4}
+.featured-date small{font-size:10px;color:#99b0c3}
+.footer-sitemap{font-size:12px;color:#d6af91;margin-left:auto}
+@media(max-width:980px){.featured-date-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:580px){.featured-date-grid{grid-template-columns:repeat(2,1fr)}.footer-sitemap{margin-left:0}}
