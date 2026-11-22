@@ -23,7 +23,7 @@ This repository publishes a lightweight, dependency-free **interactive browser e
 
 ## Reproducibility
 
-The JavaScript viewer ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The **updated English-language scientific Python package** is in [`PythonCode/`](PythonCode/), replacing the previous Portuguese-language version. It includes research-grade figure generators, exact certificates, numerical audits, the 38-date dataset, and supplementary LaTeX source.
+The JavaScript viewer ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The **scientific Python package** is in [`PythonCode/`](PythonCode/). It includes research-grade figure generators, exact certificates, numerical audits, the 38-date dataset, and supplementary LaTeX source.
 
 Consult the [PythonCode README](PythonCode/README.md) for the complete reproduction sequence and the [scientific-code guide](CODE.md) for an overview. The browser images are approximate illustrations, not substitutes for the mathematical certificates.
 
