@@ -1,0 +1,297 @@
+% Online Resource 1 -- Tables S1-S6
+% Build: pdflatex ESM_1 (twice). The tables between the markers are written by supplement_en.py.
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\thetable}{S\arabic{table}}
+\pagestyle{plain}
+\setlength{\LTcapwidth}{\textwidth}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Online Resource 1}\\[0.8em]
+{\large Birthday Polynomials and the Boundaries of Newton's Method}\\[0.4em]
+\emph{The Mathematical Intelligencer}\\[0.8em]
+Americo Cunha Jr.\\[0.2em]
+{\small Laborat\'orio Nacional de Computa\c{c}\~ao Cient\'ifica (LNCC), Petr\'opolis, Brazil\\
+Universidade do Estado do Rio de Janeiro (UERJ), Rio de Janeiro, Brazil\\
+\texttt{americo.cunhajr@gmail.com}}
+\end{center}
+
+\bigskip
+
+This Online Resource collects the data behind the numbers quoted in the article. The 38
+dates are those of the figures, those mentioned in the text and in the box on conventions,
+and eight further dates from the history of science and of Brazil. Dates are written
+day/month/year. Table~\ref{tab:s1} gives the polynomial of each date and its
+multiplicities. Table~\ref{tab:s2} gives the window of the pictures and the data for the
+Girard heuristic. Table~\ref{tab:s3} gives the classification of the free critical points
+and the result of the numerical test of the regular ones. Table~\ref{tab:s4} collects the
+runs of the Lyapunov indicator for 20/11/1924, and Table~\ref{tab:s5} the verification of
+the critical-orbit intervals for that date. Table~\ref{tab:s6} classifies the points of
+each fractal picture of the article.
+
+Exact quantities are the polynomials, degrees, multiplicities, and numbers of distinct
+roots (Table~\ref{tab:s1}), the classification of the critical points
+(Table~\ref{tab:s3}), and the checks of Table~\ref{tab:s5}, whose enclosures are validated
+by interval arithmetic. Decimal numbers are rounded approximations, given with three
+decimal places (four for the Lyapunov runs); unless stated otherwise, they were obtained
+in double-precision floating point. The convergence recorded in Table~\ref{tab:s3} is a
+finite numerical criterion, not a proof of convergence. The only nonconvergence in that
+table, that of the real critical point of 20/11/1924, is proved in the article
+(Proposition~3).
+
+{\sloppy The same data are in the files \texttt{supplementary\_dates.csv},
+\texttt{mandelbrot\_orbita.json}, \texttt{certificado\_mandelbrot.json},
+\texttt{certificado\_aprisionamento.json}, and \texttt{auditoria\_figuras.json} of Online
+Resource~2, which contains the programs that produce them. Its \texttt{README.md}
+describes how to reproduce the data and these tables, and the program
+\texttt{auditoria\_datas.py} recomputes every number quoted in the article and compares it
+with the published value.\par}
+
+% BEGIN TABLES S1-S6 (written by supplement_en.py; do not edit by hand)
+{\small
+\begin{longtable}{@{}l >{\raggedright\arraybackslash}p{5.6cm} l c c c@{}}
+\caption{Dates, polynomials, degree $d$, number $k$ of distinct roots, and multiplicity $m_0$ of the root $z=0$ (0 if $z=0$ is not a root). All other roots are simple (exact verification)}\label{tab:s1}\\
+\toprule
+Date & Occasion & $p(z)$ & $d$ & $k$ & $m_0$\\
+\midrule\endfirsthead
+\toprule Date & Occasion & $p(z)$ & $d$ & $k$ & $m_0$\\\midrule\endhead
+25/12/1642 & Birth of Isaac Newton (Julian) & $2z^7+5z^6+z^5+2z^4+z^3+6z^2+4z+2$ & 7 & 7 & 0\\
+04/01/1643 & Birth of Isaac Newton (Gregorian) & $4z^6+z^4+z^3+6z^2+4z+3$ & 6 & 6 & 0\\
+15/04/1707 & Birth of Leonhard Euler & $z^7+5z^6+4z^4+z^3+7z^2+7$ & 7 & 7 & 0\\
+30/04/1777 & Birth of Carl Friedrich Gauss & $3z^7+4z^4+z^3+7z^2+7z+7$ & 7 & 7 & 0\\
+16/08/1821 & Birth of Arthur Cayley & $z^7+6z^6+8z^4+z^3+8z^2+2z+1$ & 7 & 7 & 0\\
+29/04/1854 & Birth of Henri Poincaré & $2z^7+9z^6+4z^4+z^3+8z^2+5z+4$ & 7 & 7 & 0\\
+28/02/1878 & Birth of Pierre Fatou & $2z^7+8z^6+2z^4+z^3+8z^2+7z+8$ & 7 & 7 & 0\\
+03/02/1893 & Birth of Gaston Julia & $3z^6+2z^4+z^3+8z^2+9z+3$ & 6 & 6 & 0\\
+20/11/1924 & Birth of Benoit Mandelbrot & $2z^7+z^5+z^4+z^3+9z^2+2z+4$ & 7 & 7 & 0\\
+05/07/1687 & Publication of the Principia (Julian) & $5z^6+7z^4+z^3+6z^2+8z+7$ & 6 & 6 & 0\\
+15/07/1687 & Publication of the Principia (Gregorian) & $z^7+5z^6+7z^4+z^3+6z^2+8z+7$ & 7 & 7 & 0\\
+07/09/1822 & Independence of Brazil & $7z^6+9z^4+z^3+8z^2+2z+2$ & 6 & 6 & 0\\
+23/09/1846 & Galle observes Neptune & $2z^7+3z^6+9z^4+z^3+8z^2+4z+6$ & 7 & 7 & 0\\
+13/05/1888 & Golden Law (abolition of slavery in Brazil) & $z^7+3z^6+5z^4+z^3+8z^2+8z+8$ & 7 & 7 & 0\\
+21/01/1889 & Announcement of King Oscar II's prize & $2z^7+z^6+z^4+z^3+8z^2+8z+9$ & 7 & 7 & 0\\
+15/11/1889 & Proclamation of the Republic of Brazil & $z^7+5z^6+z^5+z^4+z^3+8z^2+8z+9$ & 7 & 7 & 0\\
+30/11/1889 & Poincaré asks to stop the printing & $3z^7+z^5+z^4+z^3+8z^2+8z+9$ & 7 & 7 & 0\\
+08/08/1900 & Hilbert's problems & $8z^6+8z^4+z^3+9z^2$ & 6 & 5 & 2\\
+23/10/1906 & Flight of the 14-bis & $2z^7+3z^6+z^5+z^3+9z^2+6$ & 7 & 7 & 0\\
+29/05/1919 & Sobral eclipse & $2z^7+9z^6+5z^4+z^3+9z^2+z+9$ & 7 & 7 & 0\\
+15/10/1952 & Founding of IMPA & $z^7+5z^6+z^5+z^3+9z^2+5z+2$ & 7 & 7 & 0\\
+29/12/1972 & Lorenz's talk & $2z^7+9z^6+z^5+2z^4+z^3+9z^2+7z+2$ & 7 & 7 & 0\\
+16/05/1980 & Founding of LNCC & $z^7+6z^6+5z^4+z^3+9z^2+8z$ & 7 & 7 & 1\\
+05/10/1988 & Brazilian Federal Constitution & $5z^6+z^5+z^3+9z^2+8z+8$ & 6 & 6 & 0\\
+23/06/1993 & Wiles's announcement & $2z^7+3z^6+6z^4+z^3+9z^2+9z+3$ & 7 & 7 & 0\\
+22/04/1500 & Arrival of Cabral (Julian) & $2z^7+2z^6+4z^4+z^3+5z^2$ & 7 & 6 & 2\\
+02/05/1500 & Arrival of Cabral (proleptic Gregorian) & $2z^6+5z^4+z^3+5z^2$ & 6 & 5 & 2\\
+04/10/1582 & Last Julian day & $4z^6+z^5+z^3+5z^2+8z+2$ & 6 & 6 & 0\\
+15/10/1582 & First Gregorian day & $z^7+5z^6+z^5+z^3+5z^2+8z+2$ & 7 & 7 & 0\\
+20/07/1969 & Apollo 11 (Brasília time) & $2z^7+7z^4+z^3+9z^2+6z+9$ & 7 & 7 & 0\\
+21/07/1969 & Apollo 11 (UTC) & $2z^7+z^6+7z^4+z^3+9z^2+6z+9$ & 7 & 7 & 0\\
+14/09/2015 & Detection of gravitational waves & $z^7+4z^6+9z^4+2z^3+z+5$ & 7 & 7 & 0\\
+11/02/2016 & Announcement of the detection & $z^7+z^6+2z^4+2z^3+z+6$ & 7 & 7 & 0\\
+01/01/2000 & New Year's Day 2000 & $z^6+z^4+2z^3$ & 6 & 4 & 3\\
+30/08/1984 & Personal date (author's birth) & $3z^7+8z^4+z^3+9z^2+8z+4$ & 7 & 7 & 0\\
+03/07/1986 & Personal date & $3z^6+7z^4+z^3+9z^2+8z+6$ & 6 & 6 & 0\\
+27/04/1952 & Personal date & $2z^7+7z^6+4z^4+z^3+9z^2+5z+2$ & 7 & 7 & 0\\
+15/08/1950 & Personal date & $z^7+5z^6+8z^4+z^3+9z^2+5z$ & 7 & 7 & 1\\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{@{}l r r c r r r@{}}
+\caption{Window (real center and half-width $R$), isolated root outside the window, ratio $c_1/c_0$, real root of largest modulus, and relative error of the prediction $-c_1/c_0$}\label{tab:s2}\\
+\toprule
+Date & center & $R$ & isolated & $c_1/c_0$ & real root & rel.\ error\\
+\midrule\endfirsthead
+\toprule Date & center & $R$ & isolated & $c_1/c_0$ & real root & rel.\ error\\\midrule\endhead
+25/12/1642 & $-0.357$ & $2.772$ & no & $2.50$ & $-2.490$ & $0.004$\\
+04/01/1643 & $0.000$ & $1.623$ & no & $0.00$ & --- & ---\\
+15/04/1707 & $0.026$ & $1.472$ & yes & $5.00$ & $-5.154$ & $0.030$\\
+30/04/1777 & $0.000$ & $1.800$ & no & $0.00$ & $-1.302$ & ---\\
+16/08/1821 & $0.035$ & $1.390$ & yes & $6.00$ & $-6.209$ & $0.034$\\
+29/04/1854 & $0.016$ & $1.360$ & yes & $4.50$ & $-4.597$ & $0.021$\\
+28/02/1878 & $0.011$ & $1.480$ & yes & $4.00$ & $-4.065$ & $0.016$\\
+03/02/1893 & $0.000$ & $1.895$ & no & $0.00$ & --- & ---\\
+20/11/1924 & $0.000$ & $1.833$ & no & $0.00$ & $-1.317$ & ---\\
+05/07/1687 & $0.000$ & $1.622$ & no & $0.00$ & --- & ---\\
+15/07/1687 & $0.042$ & $1.602$ & yes & $5.00$ & $-5.253$ & $0.048$\\
+07/09/1822 & $0.000$ & $1.324$ & no & $0.00$ & --- & ---\\
+23/09/1846 & $-0.214$ & $2.810$ & no & $1.50$ & $-2.376$ & $0.369$\\
+13/05/1888 & $-0.429$ & $3.918$ & no & $3.00$ & $-3.443$ & $0.129$\\
+21/01/1889 & $-0.071$ & $1.960$ & no & $0.50$ & $-1.418$ & $0.647$\\
+15/11/1889 & $-0.027$ & $1.676$ & yes & $5.00$ & $-4.840$ & $0.033$\\
+30/11/1889 & $0.000$ & $1.813$ & no & $0.00$ & $-1.163$ & ---\\
+08/08/1900 & $0.000$ & $1.377$ & no & $0.00$ & $0.000$ & ---\\
+23/10/1906 & $-0.214$ & $1.970$ & no & $1.50$ & $-1.729$ & $0.133$\\
+29/05/1919 & $0.020$ & $1.375$ & yes & $4.50$ & $-4.622$ & $0.026$\\
+15/10/1952 & $-0.034$ & $1.596$ & yes & $5.00$ & $-4.798$ & $0.042$\\
+29/12/1972 & $-0.010$ & $1.415$ & yes & $4.50$ & $-4.442$ & $0.013$\\
+16/05/1980 & $0.022$ & $1.544$ & yes & $6.00$ & $-6.134$ & $0.022$\\
+05/10/1988 & $-0.033$ & $1.755$ & no & $0.20$ & --- & ---\\
+23/06/1993 & $-0.214$ & $2.574$ & no & $1.50$ & $-2.195$ & $0.317$\\
+22/04/1500 & $-0.167$ & $2.104$ & no & $1.00$ & $-1.786$ & $0.440$\\
+02/05/1500 & $0.000$ & $1.794$ & no & $0.00$ & $0.000$ & ---\\
+04/10/1582 & $-0.042$ & $1.685$ & no & $0.25$ & $-0.932$ & $0.732$\\
+15/10/1582 & $-0.035$ & $1.564$ & yes & $5.00$ & $-4.789$ & $0.044$\\
+20/07/1969 & $0.000$ & $2.182$ & no & $0.00$ & $-1.679$ & ---\\
+21/07/1969 & $-0.071$ & $2.290$ & no & $0.50$ & $-1.833$ & $0.727$\\
+14/09/2015 & $0.072$ & $1.908$ & yes & $4.00$ & $-4.435$ & $0.098$\\
+11/02/2016 & $-0.143$ & $1.867$ & no & $1.00$ & $-1.579$ & $0.367$\\
+01/01/2000 & $0.000$ & $1.839$ & no & $0.00$ & $-1.000$ & ---\\
+30/08/1984 & $0.000$ & $1.928$ & no & $0.00$ & $-1.483$ & ---\\
+03/07/1986 & $0.000$ & $1.822$ & no & $0.00$ & --- & ---\\
+27/04/1952 & $0.027$ & $1.422$ & yes & $3.50$ & $-3.661$ & $0.044$\\
+15/08/1950 & $0.048$ & $1.542$ & yes & $5.00$ & $-5.290$ & $0.055$\\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{@{}l >{\raggedright\arraybackslash}p{12.4cm}@{}}
+\caption{Free critical points of $N_p$. For each regular one, $z_0$ (a zero of $p''$ that is not a zero of $p$ or of $p'$), the root reached and the number of iterations, with the criterion: step smaller than $10^{-14}\max(1,\max|\zeta|)$ and distance to a root smaller than $10^{-9}$, at most $10^4$ iterations. Critical poles (multiple zeros of $p'$ that are not roots of $p$) were identified in exact arithmetic and were not iterated numerically}\label{tab:s3}\\
+\toprule
+Date & $z_0\to$ root reached (iterations)\\
+\midrule\endfirsthead
+\toprule Date & $z_0\to$ root reached (iterations)\\\midrule\endhead
+25/12/1642 & $-1.745$ $\to$ $-2.489$ (68); $-0.329-0.438i$ $\to$ $-0.401-0.484i$ (5); $-0.329+0.438i$ $\to$ $-0.401+0.484i$ (5); $0.308-0.421i$ $\to$ $-0.401-0.484i$ (7); $0.308+0.421i$ $\to$ $-0.401+0.484i$ (7)\\
+04/01/1643 & $-0.366-0.387i$ $\to$ $-0.255-0.733i$ (9); $-0.366+0.387i$ $\to$ $-0.255+0.733i$ (9); $0.366-0.467i$ $\to$ $-0.255-0.733i$ (12); $0.366+0.467i$ $\to$ $-0.255+0.733i$ (12)\\
+15/04/1707 & $-3.656$ $\to$ $-5.154$ (88); $-0.253-0.451i$ $\to$ $0.065-0.948i$ (10); $-0.253+0.451i$ $\to$ $0.065+0.948i$ (10); $0.296-0.503i$ $\to$ $0.065-0.948i$ (9); $0.296+0.503i$ $\to$ $0.065+0.948i$ (9)\\
+30/04/1777 & $-0.793$ $\to$ $-1.302$ (12); $-0.101-0.477i$ $\to$ $-0.562-0.638i$ (8); $-0.101+0.477i$ $\to$ $-0.562+0.638i$ (8); $0.497-0.587i$ $\to$ $-0.562-0.638i$ (8); $0.497+0.587i$ $\to$ $-0.562+0.638i$ (8)\\
+16/08/1821 & $-4.403$ $\to$ $-6.209$ (96); $-0.126-0.459i$ $\to$ $-0.148-0.341i$ (5); $-0.126+0.459i$ $\to$ $-0.148+0.341i$ (5); $0.184-0.591i$ $\to$ $-0.148-0.341i$ (6); $0.184+0.591i$ $\to$ $-0.148+0.341i$ (6)\\
+29/04/1854 & $-3.267$ $\to$ $-4.597$ (28); $-0.265-0.395i$ $\to$ $-0.541-0.547i$ (8); $-0.265+0.395i$ $\to$ $-0.541+0.547i$ (8); $0.292-0.414i$ $\to$ $-0.541-0.547i$ (9); $0.292+0.414i$ $\to$ $-0.541+0.547i$ (9)\\
+28/02/1878 & $-2.891$ $\to$ $-4.065$ (14); $-0.314-0.387i$ $\to$ $-0.738-0.576i$ (10); $-0.314+0.387i$ $\to$ $-0.738+0.576i$ (10); $0.331-0.394i$ $\to$ $-0.738-0.576i$ (8); $0.331+0.394i$ $\to$ $-0.738+0.576i$ (8)\\
+03/02/1893 & $-0.381-0.485i$ $\to$ $-0.527-0.209i$ (6); $-0.381+0.485i$ $\to$ $-0.527+0.209i$ (6); $0.381-0.568i$ $\to$ $-0.527-0.209i$ (8); $0.381+0.568i$ $\to$ $-0.527+0.209i$ (8)\\
+20/11/1924 & $-0.689$: no convergence in $10^4$ iterations; nonconvergence proved (Proposition~3 of the article); $-0.189-0.705i$ $\to$ $-0.100-0.687i$ (5); $-0.189+0.705i$ $\to$ $-0.100+0.687i$ (5); $0.534-0.547i$ $\to$ $-0.100-0.687i$ (6); $0.534+0.547i$ $\to$ $-0.100+0.687i$ (6)\\
+05/07/1687 & $-0.100-0.436i$ $\to$ $-0.630-0.473i$ (8); $-0.100+0.436i$ $\to$ $-0.630+0.473i$ (8); $0.100-0.624i$ $\to$ $-0.630-0.473i$ (8); $0.100+0.624i$ $\to$ $-0.630+0.473i$ (8)\\
+15/07/1687 & $-3.715$ $\to$ $-5.253$ (39); $-0.098-0.420i$ $\to$ $-0.625-0.479i$ (8); $-0.098+0.420i$ $\to$ $-0.625+0.479i$ (8); $0.169-0.621i$ $\to$ $-0.625-0.479i$ (8); $0.169+0.621i$ $\to$ $-0.625+0.479i$ (8)\\
+07/09/1822 & $-0.114-0.455i$ $\to$ $-0.208-0.547i$ (5); $-0.114+0.455i$ $\to$ $-0.208+0.547i$ (5); $0.114-0.577i$ $\to$ $-0.208-0.547i$ (6); $0.114+0.577i$ $\to$ $-0.208+0.547i$ (6)\\
+23/09/1846 & $-1.591$ $\to$ $-2.376$ (22); $-0.050-0.404i$ $\to$ $-0.500-0.630i$ (8); $-0.050+0.404i$ $\to$ $-0.500+0.630i$ (8); $0.310-0.792i$ $\to$ $0.166-1.141i$ (9); $0.310+0.792i$ $\to$ $0.166+1.141i$ (9)\\
+13/05/1888 & $-2.393$ $\to$ $-3.443$ (11); $-0.181-0.529i$ $\to$ $-0.642-0.617i$ (7); $-0.181+0.529i$ $\to$ $-0.642+0.617i$ (7); $0.307-0.645i$ $\to$ $-0.642-0.617i$ (6); $0.307+0.645i$ $\to$ $-0.642+0.617i$ (6)\\
+21/01/1889 & $-0.834$ $\to$ $-1.418$ (14); $-0.274-0.615i$ $\to$ $-0.650-0.812i$ (7); $-0.274+0.615i$ $\to$ $-0.650+0.812i$ (7); $0.512-0.492i$ $\to$ $-0.650-0.812i$ (9); $0.512+0.492i$ $\to$ $-0.650+0.812i$ (9)\\
+15/11/1889 & $-3.457$ $\to$ $-4.840$ (21); $-0.412-0.426i$ $\to$ $-0.861-0.642i$ (10); $-0.412+0.426i$ $\to$ $-0.861+0.642i$ (10); $0.355-0.433i$ $\to$ $-0.861-0.642i$ (10); $0.355+0.433i$ $\to$ $-0.861+0.642i$ (10)\\
+30/11/1889 & $-0.625$ $\to$ $-1.163$ (29); $-0.179-0.628i$ $\to$ $-0.563-0.787i$ (8); $-0.179+0.628i$ $\to$ $-0.563+0.787i$ (8); $0.492-0.484i$ $\to$ $-0.563-0.787i$ (9); $0.492+0.484i$ $\to$ $-0.563+0.787i$ (9)\\
+08/08/1900 & $-0.195-0.454i$ $\to$ $0.000$ (45); $-0.195+0.454i$ $\to$ $0.000$ (45); $0.195-0.520i$ $\to$ $0.000$ (46); $0.195+0.520i$ $\to$ $0.000$ (46)\\
+23/10/1906 & $-0.983$ $\to$ $-1.729$ (73); $-0.471-0.602i$ $\to$ $0.027-0.769i$ (7); $-0.471+0.602i$ $\to$ $0.027+0.769i$ (7); $0.427-0.436i$ $\to$ $0.027-0.769i$ (8); $0.427+0.436i$ $\to$ $0.027+0.769i$ (8)\\
+29/05/1919 & $-3.280$ $\to$ $-4.622$ (96); $-0.256-0.417i$ $\to$ $0.023-0.901i$ (10); $-0.256+0.417i$ $\to$ $0.023+0.901i$ (10); $0.289-0.436i$ $\to$ $0.023-0.901i$ (13); $0.289+0.436i$ $\to$ $0.023+0.901i$ (13)\\
+15/10/1952 & $-3.432$ $\to$ $-4.798$ (145); $-0.458-0.414i$ $\to$ $-0.283-0.405i$ (5); $-0.458+0.414i$ $\to$ $-0.283+0.405i$ (5); $0.388-0.422i$ $\to$ $-0.283-0.405i$ (7); $0.388+0.422i$ $\to$ $-0.283+0.405i$ (7)\\
+29/12/1972 & $-3.167$ $\to$ $-4.442$ (147); $-0.340-0.391i$ $\to$ $-0.398-0.242i$ (5); $-0.340+0.391i$ $\to$ $-0.398+0.242i$ (5); $0.317-0.389i$ $\to$ $-0.398-0.242i$ (8); $0.317+0.389i$ $\to$ $-0.398+0.242i$ (8)\\
+16/05/1980 & $-4.360$ $\to$ $-0.680$ (13); $-0.258-0.467i$ $\to$ $0.000$ (7); $-0.258+0.467i$ $\to$ $0.000$ (7); $0.295-0.508i$ $\to$ $0.000$ (7); $0.295+0.508i$ $\to$ $0.000$ (7)\\
+05/10/1988 & $-0.451-0.383i$ $\to$ $-0.247-0.868i$ (26); $-0.451+0.383i$ $\to$ $-0.247+0.868i$ (26); $0.384-0.442i$ $\to$ $-0.247-0.868i$ (27); $0.384+0.442i$ $\to$ $-0.247+0.868i$ (27)\\
+23/06/1993 & $-1.483$ $\to$ $-2.195$ (22); $-0.136-0.510i$ $\to$ $-0.446-0.248i$ (7); $-0.136+0.510i$ $\to$ $-0.446+0.248i$ (7); $0.342-0.634i$ $\to$ $-0.446-0.248i$ (7); $0.342+0.634i$ $\to$ $-0.446+0.248i$ (7)\\
+22/04/1500 & $-1.159$ $\to$ $0.000$ (47); $-0.127-0.444i$ $\to$ $0.000$ (45); $-0.127+0.444i$ $\to$ $0.000$ (45); $0.350-0.599i$ $\to$ $0.000$ (45); $0.350+0.599i$ $\to$ $0.000$ (45)\\
+02/05/1500 & $-0.080-0.443i$ $\to$ $0.000$ (45); $-0.080+0.443i$ $\to$ $0.000$ (45); $0.080-0.904i$ $\to$ $0.000$ (46); $0.080+0.904i$ $\to$ $0.000$ (46)\\
+04/10/1582 & $-0.424-0.328i$ $\to$ $-0.304$ (6); $-0.424+0.328i$ $\to$ $-0.304$ (6); $0.341-0.417i$ $\to$ $-0.304$ (7); $0.341+0.417i$ $\to$ $-0.304$ (7)\\
+15/10/1582 & $-3.431$ $\to$ $-0.928$ (12); $-0.402-0.336i$ $\to$ $-0.305$ (6); $-0.402+0.336i$ $\to$ $-0.305$ (6); $0.332-0.378i$ $\to$ $-0.305$ (7); $0.332+0.378i$ $\to$ $-0.305$ (7)\\
+20/07/1969 & $-1.041$ $\to$ $-1.679$ (52); $-0.053-0.450i$ $\to$ $-0.537-0.704i$ (8); $-0.053+0.450i$ $\to$ $-0.537+0.704i$ (8); $0.574-0.820i$ $\to$ $0.263-1.165i$ (9); $0.574+0.820i$ $\to$ $0.263+1.165i$ (9)\\
+21/07/1969 & $-1.165$ $\to$ $-1.833$ (11); $-0.064-0.463i$ $\to$ $-0.555-0.705i$ (8); $-0.064+0.463i$ $\to$ $-0.555+0.705i$ (8); $0.468-0.790i$ $\to$ $1.025-1.008i$ (11); $0.468+0.790i$ $\to$ $1.025+1.008i$ (11)\\
+14/09/2015 & $-3.113$ $\to$ $-4.435$ (14); $-0.110$ $\to$ $-4.435$ (8); $0.000$ $\to$ $-4.435$ (8); $0.183-0.896i$ $\to$ $0.615+0.596i$ (10); $0.183+0.896i$ $\to$ $0.615-0.596i$ (10)\\
+11/02/2016 & $-0.457$ $\to$ $-1.579$ (14); $0.000$ $\to$ $-1.579$ (17); $0.371-0.698i$ $\to$ $0.933-0.739i$ (13); $0.371+0.698i$ $\to$ $0.933+0.739i$ (13); critical pole $-1$, of order 2: exact orbit $-1\mapsto\infty\mapsto\infty$\\
+01/01/2000 & $-0.560$ $\to$ $0.000$ (75); $0.280-0.797i$ $\to$ $0.000$ (77); $0.280+0.797i$ $\to$ $0.000$ (77)\\
+30/08/1984 & $-0.954$ $\to$ $-1.483$ (67); $-0.049-0.421i$ $\to$ $-0.433-0.393i$ (7); $-0.049+0.421i$ $\to$ $-0.433+0.393i$ (7); $0.526-0.747i$ $\to$ $-0.433-0.393i$ (10); $0.526+0.747i$ $\to$ $-0.433+0.393i$ (10)\\
+03/07/1986 & $-0.091-0.540i$ $\to$ $-0.525-0.522i$ (7); $-0.091+0.540i$ $\to$ $-0.525+0.522i$ (7); $0.091-0.811i$ $\to$ $-0.525-0.522i$ (7); $0.091+0.811i$ $\to$ $-0.525+0.522i$ (7)\\
+27/04/1952 & $-2.586$ $\to$ $-3.661$ (33); $-0.277-0.441i$ $\to$ $-0.309-0.372i$ (5); $-0.277+0.441i$ $\to$ $-0.309+0.372i$ (5); $0.320-0.451i$ $\to$ $-0.309-0.372i$ (7); $0.320+0.451i$ $\to$ $-0.309+0.372i$ (7)\\
+15/08/1950 & $-3.735$ $\to$ $-0.474$ (13); $-0.120-0.488i$ $\to$ $0.000$ (7); $-0.120+0.488i$ $\to$ $0.000$ (7); $0.202-0.643i$ $\to$ $0.000$ (8); $0.202+0.643i$ $\to$ $0.000$ (8)\\
+\bottomrule
+\end{longtable}
+
+\begin{table}[htbp]
+\centering
+\caption{Orbit of the real free critical point $c\approx-0.688805$ of $N_p$ for 20/11/1924: indicator $\lambda_n=\frac1n\sum_{j=1}^n\log|N_p'(x_j)|$,
+with $x_j=N_p^j(c)$, and interval visited by the orbit (minimum and maximum of the iterates)}
+\label{tab:s4}
+\begin{tabular}{@{}l l r r l@{}}
+\toprule
+Precision & starting point & $n$ & $\lambda_n$ & visited interval\\
+\midrule
+double & $c$ & $10^{4}$ & $0.1917$ & [$-0.7622$, $0.2005$]\\
+double & $c$ & $10^{5}$ & $0.1830$ & [$-0.7622$, $0.2005$]\\
+double & $c$ & $10^{6}$ & $0.1854$ & [$-0.7622$, $0.2005$]\\
+extended (\texttt{long double}) & $c$ & $10^{5}$ & $0.1849$ & [$-0.7622$, $0.2005$]\\
+double & $c+10^{-8}$ & $10^{5}$ & $0.1835$ & [$-0.7622$, $0.2005$]\\
+double & $c-10^{-8}$ & $10^{5}$ & $0.1835$ & [$-0.7622$, $0.2005$]\\
+double & $c+10^{-4}$ & $10^{5}$ & $0.1845$ & [$-0.7622$, $0.2005$]\\
+40 digits (\texttt{mpmath}) & $c$ & $2\times10^{4}$ & $0.1835$ & [$-0.7622$, $0.2005$]\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Critical-orbit intervals for 20/11/1924: $I_-=[x_2,x_4]$ and $I_+=[x_1,x_3]$, the
+smallest closed intervals that contain the even and the odd iterates of $c$, respectively.
+Validated enclosures of $x_j=N_p^j(c)$ ($x_0=c$), given by midpoint and radius, and result of
+each exact check. The exact rational endpoints, the isolating intervals, the Sturm counts, and
+the bounds for each inequality are in the file \texttt{certificado\_mandelbrot.json} of
+Online Resource~2}
+\label{tab:s5}
+\begin{tabular}{@{}c@{}}
+\begin{tabular}{@{}l r r@{}}
+\toprule
+ & midpoint & radius\\
+\midrule
+$x_0$ & $-0.688805042592084$ & $2.2\times10^{-41}$\\
+$x_1$ & $0.158090063368374$ & $1.2\times10^{-40}$\\
+$x_2$ & $-0.762158290647476$ & $6.9\times10^{-40}$\\
+$x_3$ & $0.200462120038431$ & $5.0\times10^{-39}$\\
+$x_4$ & $-0.626668751444423$ & $2.4\times10^{-38}$\\
+$x_5$ & $0.179068904269946$ & $1.2\times10^{-37}$\\
+\bottomrule
+\end{tabular}\\[8pt]
+\begin{tabular}{@{}l l@{}}
+\toprule
+Check & result\\
+\midrule
+$\gcd(p',p'')=1$: $N_p$ has no critical poles & yes\\
+$p''$ squarefree, a single real zero, $c$ isolated & yes\\
+on $J_-\supset I_-$: $p$ and $p'$ without zeros, $p''$ with one zero ($c$) & yes\\
+on $J_+\supset I_+$: $p$, $p'$, and $p''$ without zeros & yes\\
+$x_2<c<x_4$, $x_1<x_3$, $x_2<x_4$ & yes\\
+$x_5<x_3$ & yes\\
+\bottomrule
+\end{tabular}
+\end{tabular}
+\end{table}
+
+\begin{longtable}{@{}l r r r r@{}}
+\caption{Classification of the $3200\times3200$ points of each fractal picture of the article:
+(a) classified; (b) non-finite value in floating point; (c) unclassified after 300 iterations;
+(d) stopped by the step criterion farther than $10^{-4}R$ from every root. For Fig.~11, all 174,488 points of class (c) have their last iterate within $10^{-6}$ of $0$ or $1$}
+\label{tab:s6}\\
+\toprule
+Picture & (a) & (b) & (c) & (d)\\
+\midrule\endfirsthead
+\toprule Picture & (a) & (b) & (c) & (d)\\\midrule\endhead
+25/12/1642 (Fig. 1a) & 10,240,000 & 0 & 0 & 0\\
+04/01/1643 (Fig. 1b) & 10,240,000 & 0 & 0 & 0\\
+30/04/1777 (Figs. 4a, 5) & 10,240,000 & 0 & 0 & 0\\
+15/04/1707 (Fig. 7a) & 10,240,000 & 0 & 0 & 0\\
+16/08/1821 (Fig. 7b) & 10,240,000 & 0 & 0 & 0\\
+29/04/1854 (Fig. 7c) & 10,240,000 & 0 & 0 & 0\\
+28/02/1878 (Fig. 7d) & 10,240,000 & 0 & 0 & 0\\
+03/02/1893 (Fig. 7e) & 10,240,000 & 0 & 0 & 0\\
+20/11/1924 (Fig. 7f) & 10,240,000 & 0 & 0 & 0\\
+05/07/1687 (Fig. 8a) & 10,240,000 & 0 & 0 & 0\\
+23/09/1846 (Fig. 8b) & 10,240,000 & 0 & 0 & 0\\
+30/11/1889 (Fig. 8c) & 10,240,000 & 0 & 0 & 0\\
+29/05/1919 (Fig. 8d) & 10,240,000 & 0 & 0 & 0\\
+29/12/1972 (Fig. 8e) & 10,240,000 & 0 & 0 & 0\\
+16/05/1980 (Fig. 8f) & 10,240,000 & 0 & 0 & 0\\
+08/08/1900 (Fig. 9) & 10,240,000 & 0 & 0 & 0\\
+30/08/1984 (Fig. 10a) & 10,240,000 & 0 & 0 & 0\\
+03/07/1986 (Fig. 10b) & 10,240,000 & 0 & 0 & 0\\
+27/04/1952 (Fig. 10c) & 10,240,000 & 0 & 0 & 0\\
+15/08/1950 (Fig. 10d) & 10,240,000 & 0 & 0 & 0\\
+$z^2-1$ (Fig. 3a) & 10,240,000 & 0 & 0 & 0\\
+$z^3-1$ (Fig. 3b) & 10,240,000 & 0 & 0 & 0\\
+$z^3-2z+2$ (Fig. 11) & 10,065,512 & 0 & 174,488 & 0\\
+Gauss, magnification (Fig. 4b) & 10,240,000 & 0 & 0 & 0\\
+Gauss, magnification (Fig. 4c) & 10,240,000 & 0 & 0 & 0\\
+\bottomrule
+\end{longtable}
+}
+% END TABLES S1-S6
+
+\end{document}

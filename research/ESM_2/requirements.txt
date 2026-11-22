@@ -1,0 +1,6 @@
+# Reproduction dependencies; versions used in the submitted research package are listed in README.md.
+numpy
+matplotlib
+Pillow
+mpmath
+sympy
