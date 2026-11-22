@@ -21,20 +21,6 @@ This repository publishes a lightweight, dependency-free **interactive browser e
 - Browse the 38 historical and personal dates considered in the paper.
 - Responsive dark interface; no server or JavaScript framework required.
 
-## Discoverability and publication
-
-Five static articles about Newton, Euler, Gauss, Julia, and Mandelbrot complement the interactive gallery. Metadata, an XML sitemap, and structured data are maintained in the repository. See [SEO.md](SEO.md) for Search Console verification and indexing instructions.
-
-**GitHub Pages:** In **Settings → Pages**, select **Deploy from a branch**, using `main` and `/ (root)`. The built-in GitHub **pages build and deployment** workflow publishes the website. The separate `.github/workflows/pages.yml` workflow validates scripts and search assets without deploying a second Pages artifact.
-
-**Local preview:**
-
-```bash
-python -m http.server 8000
-```
-
-Open http://localhost:8000/ (the fractal renderer uses a Web Worker and requires HTTP).
-
 ## Reproducibility
 
 The JavaScript viewer ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The **scientific Python package** is in [`PythonCode/`](PythonCode/). It includes research-grade figure generators, exact certificates, numerical audits, the 38-date dataset, and supplementary LaTeX source.
