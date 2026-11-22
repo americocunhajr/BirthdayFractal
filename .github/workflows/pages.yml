@@ -22,6 +22,8 @@ jobs:
         run: |
           node --check app.js
           node --check worker.js
+      - name: Validate sitemap and search metadata
+        run: python3 scripts/check_seo.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
