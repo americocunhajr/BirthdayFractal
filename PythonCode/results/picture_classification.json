@@ -1,0 +1,353 @@
+{
+ "Fig1a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -0.357142857142857,
+   0.0
+  ],
+  "half_width": 2.7720542304109754
+ },
+ "Fig1b": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   1.1102230246251565e-16,
+   0.0
+  ],
+  "half_width": 1.6235394329509318
+ },
+ "Fig4a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -2.5376526277146434e-16,
+   0.0
+  ],
+  "half_width": 1.7995017813009266
+ },
+ "Fig7a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.025599343957084093,
+   0.0
+  ],
+  "half_width": 1.4719344699531034
+ },
+ "Fig7b": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.03475834820627584,
+   0.0
+  ],
+  "half_width": 1.3896717306529216
+ },
+ "Fig7c": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.016237764079081618,
+   0.0
+  ],
+  "half_width": 1.3602984657498842
+ },
+ "Fig7d": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.010906697880811925,
+   0.0
+  ],
+  "half_width": 1.480514208169772
+ },
+ "Fig7e": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   2.9605947323337506e-16,
+   0.0
+  ],
+  "half_width": 1.8951159953407908
+ },
+ "Fig7f": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -1.1895246692412391e-17,
+   0.0
+  ],
+  "half_width": 1.8335373568567956
+ },
+ "Fig8a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -3.700743415417188e-16,
+   0.0
+  ],
+  "half_width": 1.6218167978620823
+ },
+ "Fig8b": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -0.21428571428571455,
+   0.0
+  ],
+  "half_width": 2.8099485425011257
+ },
+ "Fig8c": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.0,
+   0.0
+  ],
+  "half_width": 1.8132533110733016
+ },
+ "Fig8d": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.02034066141597459,
+   0.0
+  ],
+  "half_width": 1.3745277574223738
+ },
+ "Fig8e": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -0.009653548802745363,
+   0.0
+  ],
+  "half_width": 1.4146245976053875
+ },
+ "Fig8f": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.022331765709544295,
+   0.0
+  ],
+  "half_width": 1.544009482428656
+ },
+ "Fig9a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -1.7763568394002506e-16,
+   0.0
+  ],
+  "half_width": 1.3765475025203455
+ },
+ "Fig10a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   1.9032394707859825e-16,
+   0.0
+  ],
+  "half_width": 1.9283371641117075
+ },
+ "Fig10b": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   1.4802973661668753e-16,
+   0.0
+  ],
+  "half_width": 1.8219271845478913
+ },
+ "Fig10c": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.026787042166420878,
+   0.0
+  ],
+  "half_width": 1.4220281377432302
+ },
+ "Fig10d": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.04824446805157008,
+   0.0
+  ],
+  "half_width": 1.542080094714176
+ },
+ "Fig3a": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   0.0,
+   0.0
+  ],
+  "half_width": 1.3
+ },
+ "Fig3b": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -7.401486830834377e-17,
+   0.0
+  ],
+  "half_width": 1.3000000000000003
+ },
+ "Fig11": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10065512,
+   "non_finite": 0,
+   "unclassified": 174488,
+   "stopped_far": 0
+  },
+  "center": [
+   0.5,
+   0.0
+  ],
+  "half_width": 1.0,
+  "unclassified_near_cycle_1e-6": 174488
+ },
+ "Fig4b": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -0.45128,
+   0.0
+  ],
+  "half_width": 0.29991696355015446
+ },
+ "Fig4c": {
+  "points": 10240000,
+  "counts": {
+   "classified": 10240000,
+   "non_finite": 0,
+   "unclassified": 0,
+   "stopped_far": 0
+  },
+  "center": [
+   -0.6158,
+   0.0919
+  ],
+  "half_width": 0.03748962044376931
+ }
+}

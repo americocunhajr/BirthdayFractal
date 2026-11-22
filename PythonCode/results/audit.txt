@@ -1,0 +1,88 @@
+OK      38 dates, all distinct                                                                           38 dates
+OK      polynomials = digits of DDMMYYYY without leading zeros
+OK      published polynomial of 25/12/1642
+OK      published polynomial of 04/01/1643
+OK      published polynomial of 30/04/1777
+OK      published polynomial of 20/11/1924
+OK      published polynomial of 08/08/1900
+OK      published polynomial of 01/01/2000
+OK      25/12/1642: mult(0) = 0, other roots simple, k = 7
+OK      04/01/1643: mult(0) = 0, other roots simple, k = 6
+OK      15/04/1707: mult(0) = 0, other roots simple, k = 7
+OK      30/04/1777: mult(0) = 0, other roots simple, k = 7
+OK      16/08/1821: mult(0) = 0, other roots simple, k = 7
+OK      29/04/1854: mult(0) = 0, other roots simple, k = 7
+OK      28/02/1878: mult(0) = 0, other roots simple, k = 7
+OK      03/02/1893: mult(0) = 0, other roots simple, k = 6
+OK      20/11/1924: mult(0) = 0, other roots simple, k = 7
+OK      05/07/1687: mult(0) = 0, other roots simple, k = 6
+OK      15/07/1687: mult(0) = 0, other roots simple, k = 7
+OK      07/09/1822: mult(0) = 0, other roots simple, k = 6
+OK      23/09/1846: mult(0) = 0, other roots simple, k = 7
+OK      13/05/1888: mult(0) = 0, other roots simple, k = 7
+OK      21/01/1889: mult(0) = 0, other roots simple, k = 7
+OK      15/11/1889: mult(0) = 0, other roots simple, k = 7
+OK      30/11/1889: mult(0) = 0, other roots simple, k = 7
+OK      08/08/1900: mult(0) = 2, other roots simple, k = 5
+OK      23/10/1906: mult(0) = 0, other roots simple, k = 7
+OK      29/05/1919: mult(0) = 0, other roots simple, k = 7
+OK      15/10/1952: mult(0) = 0, other roots simple, k = 7
+OK      29/12/1972: mult(0) = 0, other roots simple, k = 7
+OK      16/05/1980: mult(0) = 1, other roots simple, k = 7
+OK      05/10/1988: mult(0) = 0, other roots simple, k = 6
+OK      23/06/1993: mult(0) = 0, other roots simple, k = 7
+OK      22/04/1500: mult(0) = 2, other roots simple, k = 6
+OK      02/05/1500: mult(0) = 2, other roots simple, k = 5
+OK      04/10/1582: mult(0) = 0, other roots simple, k = 6
+OK      15/10/1582: mult(0) = 0, other roots simple, k = 7
+OK      20/07/1969: mult(0) = 0, other roots simple, k = 7
+OK      21/07/1969: mult(0) = 0, other roots simple, k = 7
+OK      14/09/2015: mult(0) = 0, other roots simple, k = 7
+OK      11/02/2016: mult(0) = 0, other roots simple, k = 7
+OK      01/01/2000: mult(0) = 3, other roots simple, k = 4
+OK      30/08/1984: mult(0) = 0, other roots simple, k = 7
+OK      03/07/1986: mult(0) = 0, other roots simple, k = 6
+OK      27/04/1952: mult(0) = 0, other roots simple, k = 7
+OK      15/08/1950: mult(0) = 1, other roots simple, k = 7
+OK      14 dates with c1/c0 >= 3.5, all with an isolated root                                            14 dates
+OK      no date with c1/c0 <= 3 has an isolated root                                                     max c1/c0 among the others = 3.0
+OK      relative errors of -c1/c0 between 1% and 10%                                                     min 0.0130, max 0.0980
+OK      days of the 14 dates in 14-19 or 27-29                                                           [14, 15, 16, 27, 28, 29]
+OK      Lorenz: prediction -4.5, root -4.44
+OK      Euler: prediction -5, root -5.15
+OK      Neptune: prediction -1.5, root -2.38, not isolated
+OK      15/08/1950: isolated root -5.29
+OK      03/07/1986 (Fig. 10b): degree 6 and no real roots (exact Sturm count)
+OK      15/08/1950 (Fig. 10d): simple root at z = 0
+OK      published roots of Gauss's date                                                                  [-1.302+0.j    -0.562-0.638j -0.562+0.638j  0.111-1.132j  0.111+1.132j
+  1.102-0.838j  1.102+0.838j]
+OK      2k - 2 critical points for every date
+OK      critical pole only for 11/02/2016                                                                ['11/02/2016']
+OK      11/02/2016: p' = (z+1)^2(z^2-z+1)(7z^2-z+1), p(-1) = 5, double pole at -1
+OK      37 dates whose regular free critical orbits all satisfy the criterion                            exception: ['20/11/1924']
+OK      at most 147 iterations (regular free critical points)                                            147 (in ['29/12/1972'])
+OK      Mandelbrot: 5 regular free points, the 4 complex converge, the real one does not
+OK      01/01/2000: p'' = 6z(5z^3+2z+2); 3 simple roots and 3 regular free points
+OK      lambda_n (double) ~ 0.19 / 0.18 / 0.19 for n = 1e4 / 1e5 / 1e6
+OK      all runs between 0.182 and 0.192                                                                 min 0.1830, max 0.1917
+OK      same visited interval in all runs
+OK      critical-orbit intervals certified (Sturm + interval arithmetic)
+OK      distance from I- U I+ to the real root > 0.55 and to the real poles > 0.21
+OK      fractions of Table 1
+OK      0.354 x (2.1e-6)^2 ~ 1.6e-12                                                                     e3 = 2.12e-6, e4 = 1.59e-12
+OK      Fig. 4: center 0 and half-widths 1.800 / 0.300 / 0.0375
+OK      Prop. 1: S(5/2) = 1.927424                                                                       1.927424
+OK      Prop. 1: c0 r + S < c1 in both cases
+OK      Prop. 1 confirmed numerically for every valid date of the family                                 190485 dates, 0 violations
+OK      14 dates with c1/c0 >= 3.5, all isolated; 13 covered by Prop. 1; exception 14/09/2015
+OK      isolated roots quoted in the captions and text, all outside the window
+OK      Neptune: real root -2.38 inside the window
+OK      Prop. 2: 34 steps (m = 2) and 57 steps (m = 3) from 1 to 1e-10
+OK      six dates without real roots, all passing the critical-point test                                04/01/1643, 03/02/1893, 05/07/1687, 07/09/1822, 05/10/1988, 03/07/1986
+OK      Prop. 3: exact certificate for K- and K+                                                         ['-3813/5000', '-78/125'] ['79/500', '503/2500']
+OK      Prop. 3: distances > 0.55 (real root) and > 0.21 (real poles)
+OK      Prop. 3: N(alpha) ~ 0.20105, N(gamma) ~ -0.76248; poles -0.9730, -0.1130; root -1.3169
+OK      Prop. 3: distance bounds certified by Sturm counts (0.55 and 0.21)
+OK      Cor. 1: unique 2-cycle in K-, x* ~ -0.7269194 <-> 0.1681738, multiplier in (-1.90446, -1.90445)  -0.7269194 <-> 0.1681738, multiplier -1.904457
+OK      grid rows nearest to the real axis at ~6e-4                                                      5.73e-04
+OK      errors of 1e-16 grow to order 1 in ~200 iterations (lambda ~ 0.19)                               194

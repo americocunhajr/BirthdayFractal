@@ -1,0 +1,53 @@
+{
+ "polynomial": "2z^7+z^5+z^4+z^3+9z^2+2z+4",
+ "K_minus": [
+  "-3813/5000",
+  "-78/125"
+ ],
+ "K_plus": [
+  "79/500",
+  "503/2500"
+ ],
+ "N(alpha)": "28710035363278512770563751/142800917094524242873842500",
+ "N(gamma)": "-7353793772829541523/9644537228203411750",
+ "N(alpha)_approx": 0.2010493766246226,
+ "N(gamma)_approx": -0.762482802318905,
+ "checks": {
+  "p has no zeros in K-": true,
+  "p has no zeros in K+": true,
+  "p' has no zeros in K-": true,
+  "p' has no zeros in K+": true,
+  "q_gamma has no zeros in K-": true,
+  "q_delta has no zeros in K-": true,
+  "q_alpha has no zeros in K+": true,
+  "q_beta has no zeros in K+": true,
+  "N(alpha) in (gamma, delta)": true,
+  "N(gamma) in (alpha, beta)": true,
+  "p'' has a single real zero": true,
+  "p'' changes sign on K-": true,
+  "p has no zeros within 0.55 of K-": true,
+  "p has no zeros within 0.55 of K+": true,
+  "p' has no zeros within 0.21 of K-": true,
+  "p' has no zeros within 0.21 of K+": true,
+  "N o N has a single fixed point in K- (unique 2-cycle)": true,
+  "repelling 2-cycle: (N o N)'(x*) < -1": true
+ },
+ "real_root": -1.3169015520969707,
+ "real_poles": [
+  -0.9729605876307001,
+  -0.11296444783155354
+ ],
+ "min_distance_K_to_real_root": 0.5543015520969706,
+ "min_distance_K_to_real_poles": 0.2103605876307002,
+ "two_cycle": {
+  "x_star_isolating_interval": [
+   "-14091590/19385353",
+   "-12870683/17705790"
+  ],
+  "x_star_approx": -0.7269194427359652,
+  "N(x_star)_approx": 0.16817379928329074,
+  "multiplier_interval": "[-1.9044574119525487587001821014375259880132589686781533934039929525, -1.9044574119520114638110565382306669924693139906401984345424626666]",
+  "degree_of_F": 49
+ },
+ "certified": true
+}

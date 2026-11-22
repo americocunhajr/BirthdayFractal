@@ -37,7 +37,9 @@ A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the site on c
 
 ## Reproducibility
 
-The interactive generator ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The associated scientific Python package includes the source of the article's figures, data tables, and exact certificates. The full reproducibility material is in [`PythonCode/`](PythonCode/), with the [author's documented reproduction commands](PythonCode/README.md), input data, exact certificates, and Python source. See [Scientific code and reproducibility](CODE.md) for an overview and the distinction between numerical visualizations and proofs.
+The JavaScript viewer ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The **updated English-language scientific Python package** is in [`PythonCode/`](PythonCode/), replacing the previous Portuguese-language version. It includes research-grade figure generators, exact certificates, numerical audits, the 38-date dataset, and supplementary LaTeX source.
+
+Consult the [PythonCode README](PythonCode/README.md) for the complete reproduction sequence and the [scientific-code guide](CODE.md) for an overview. The browser images are approximate illustrations, not substitutes for the mathematical certificates.
 
 ## Citation
 

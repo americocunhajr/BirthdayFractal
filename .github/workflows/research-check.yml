@@ -28,26 +28,30 @@ jobs:
           from pathlib import Path
 
           root = Path('PythonCode')
-          scripts = list(root.rglob('*.py'))
-          assert len(scripts) == 14, len(scripts)
+          scripts = sorted(root.rglob('*.py'))
+          assert len(scripts) == 13, f'Expected 13 Python files, got {len(scripts)}'
           for script in scripts:
               ast.parse(script.read_text(encoding='utf-8'), filename=str(script))
-          for document in root.glob('*.json'):
+          docs = list((root / 'results').glob('*.json'))
+          assert len(docs) == 4, f'Expected 4 JSON results, got {len(docs)}'
+          for document in docs:
               json.loads(document.read_text(encoding='utf-8'))
-          with (root / 'supplementary_dates.csv').open(newline='', encoding='utf-8') as f:
-              assert len(list(csv.DictReader(f))) == 38
-          print('14 Python scripts, JSON records, and 38 dates verified')
+          with (root / 'results/dates.csv').open(newline='', encoding='utf-8') as file:
+              records = list(csv.DictReader(file))
+          assert len(records) == 38, f'Expected 38 dates, got {len(records)}'
+          print('13 Python files, 4 JSON results, and 38 dates validated')
           PY
-      - name: Recompute the two exact certificates
+      - name: Recompute exact certificates
         working-directory: PythonCode
         run: |
-          python certifica_aprisionamento.py
-          python certifica_mandelbrot.py
+          python certify_trapping.py
+          python certify_orbit_intervals.py
           python - <<'PY'
           import json
           from pathlib import Path
-          for filename in ('certificado_aprisionamento.json', 'certificado_mandelbrot.json'):
-              content = json.loads(Path(filename).read_text(encoding='utf-8'))
-              assert content.get('certificado') is True, f'Certificate failed: {filename}'
-              print(filename, 'certificado: True')
+
+          for name in ('trapping_certificate.json', 'orbit_intervals_certificate.json'):
+              data = json.loads((Path('results') / name).read_text(encoding='utf-8'))
+              assert data.get('certified') is True, f'Certificate failed: {name}'
+              print(name, 'certified: true')
           PY

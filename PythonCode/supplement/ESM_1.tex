@@ -1,5 +1,5 @@
-% Online Resource 1 -- Tables S1-S6
-% Build: pdflatex ESM_1 (twice). The tables between the markers are written by supplement_en.py.
+% Online Resource 1 -- technical notes and Tables S1-S6
+% Build: pdflatex ESM_1 (twice). The tables between the markers are written by make_supplement.py.
 \documentclass[10pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -18,14 +18,15 @@
 {\large Birthday Polynomials and the Boundaries of Newton's Method}\\[0.4em]
 \emph{The Mathematical Intelligencer}\\[0.8em]
 Americo Cunha Jr.\\[0.2em]
-{\small Laborat\'orio Nacional de Computa\c{c}\~ao Cient\'ifica (LNCC), Petr\'opolis, Brazil\\
-Universidade do Estado do Rio de Janeiro (UERJ), Rio de Janeiro, Brazil\\
-\texttt{americo.cunhajr@gmail.com}}
+{\small Laborat\'orio Nacional de Computa\c{c}\~ao Cient\'ifica, Petr\'opolis, Brazil\\
+Universidade do Estado do Rio de Janeiro, Rio de Janeiro, Brazil\\
+\texttt{americo@lncc.br}}
 \end{center}
 
 \bigskip
 
-This Online Resource collects the data behind the numbers quoted in the article. The 38
+This Online Resource contains technical notes on the computations of the article and
+the data behind the numbers it quotes. The 38
 dates are those of the figures, those mentioned in the text and in the box on conventions,
 and eight further dates from the history of science and of Brazil. Dates are written
 day/month/year. Table~\ref{tab:s1} gives the polynomial of each date and its
@@ -46,15 +47,165 @@ finite numerical criterion, not a proof of convergence. The only nonconvergence 
 table, that of the real critical point of 20/11/1924, is proved in the article
 (Proposition~3).
 
-{\sloppy The same data are in the files \texttt{supplementary\_dates.csv},
-\texttt{mandelbrot\_orbita.json}, \texttt{certificado\_mandelbrot.json},
-\texttt{certificado\_aprisionamento.json}, and \texttt{auditoria\_figuras.json} of Online
-Resource~2, which contains the programs that produce them. Its \texttt{README.md}
+{\sloppy The same data are in the files \texttt{results/dates.csv},
+\texttt{results/lyapunov.json}, \texttt{results/orbit\_intervals\_certificate.json},
+\texttt{results/trapping\_certificate.json}, and \texttt{results/picture\_classification.json} of the code repository of the article, \url{https://github.com/americocunhajr/BirthdayFractal} (folder \texttt{paper}), which contains the programs that produce them. Its \texttt{README.md}
 describes how to reproduce the data and these tables, and the program
-\texttt{auditoria\_datas.py} recomputes every number quoted in the article and compares it
-with the published value.\par}
+\texttt{audit.py} recomputes the numbers quoted in the article and in these
+notes and compares them with the published values.\par}
 
-% BEGIN TABLES S1-S6 (written by supplement_en.py; do not edit by hand)
+\section*{Technical notes}
+
+These notes give the computational details that the article summarizes.
+Section, figure, proposition, and corollary numbers refer to the article.
+
+\emph{Arithmetic and software.} The computations are of three kinds. The
+pictures, the test of the critical orbits, and the Lyapunov indicator use
+double-precision floating point (or higher precision where stated). The
+classification of roots, multiplicities, and critical points, and the
+certificate for Proposition~3, use exact rational arithmetic. The multiplier of
+the period-two orbit of Corollary~1 and the verification of the critical-orbit
+intervals use interval arithmetic with outward rounding. The computations were
+done with Python~3.13.16, NumPy~2.5.3, Matplotlib~3.11.2, Pillow~12.3.0,
+mpmath~1.3.0, and SymPy~1.14.0; they are deterministic and involve no random
+numbers. The interactive website mentioned in Section~1,
+\url{https://americocunha.org/BirthdayFractal/}, is a separate, simplified
+implementation in JavaScript, with its own colors and resolutions; all figures
+and numbers of the article come from the programs of the code repository.
+
+\emph{Pictures.} The parameters that affect the classification are the grid,
+$3200\times3200$ points reduced to $1600\times1600$ pixels; the stopping
+criterion, a Newton step $\Delta=p(z_k)/p'(z_k)$ with $|\Delta|<10^{-10}R$,
+where $R$ is the half-width of the window, or 300 iterations; and the
+classification radius $10^{-4}R$. Each point falls into one of four classes:
+(a)~\emph{classified}, if it stopped by the step criterion within $10^{-4}R$ of
+a root, which defines its color; (b)~\emph{non-finite}, if the step or the
+iterate ceased to be a finite floating-point number; (c)~\emph{unclassified
+after 300 iterations}; (d)~\emph{stopped far from the roots}, if it stopped by
+the step criterion farther than $10^{-4}R$ from every root. Classes (b) to (d)
+receive the ink color. Not being classified does not mean not converging:
+near a pole, for example, the iterate goes very far away and takes many steps
+to come back. In the 25 fractal pictures of the article, all points were
+classified, except in Fig.~11: there, 174,488 of the 10,240,000
+points (1.7\%) remained unclassified after 300 iterations, and the last iterate
+of each of them lies within $10^{-6}$ of $0$ or $1$. Classes (b) and (d) are
+empty in every picture (Table~\ref{tab:s6}). Class (b) is an artifact of the
+implementation, which evaluates $p$ and $p'$ separately without cancelling
+common factors; it is distinct from the poles of $N_p$, the zeros of $p'$ that
+are not roots of $p$, and from the removable singularities of $p/p'$ at
+multiple roots. In the magnifications of Fig.~4 (half-widths $0.300$ and $0.0375$, against $1.800$ for the full view, centered at $0$) and in Fig.~11, the grid covers the window shown, but $R$ in the
+tolerance and in the classification is that of the standard window.
+
+\emph{Roots and window.} Roots are computed with \texttt{numpy.roots}, after
+removing trailing zero coefficients, and roots within $10^{-6}$ of each other
+are merged. For the 38 dates, we checked in exact arithmetic that the only
+possible multiple root is $z=0$, with multiplicity equal to the number of
+trailing zeros of DDMMYYYY. A distinct root is called isolated if its distance
+to the robust center, formed by the medians of the real and imaginary parts of
+the distinct roots, exceeds three times the median distance. The window is
+centered at the mean of the other distinct roots, and $R$ is 1.3 times the
+largest distance from one of them to that center. Isolated roots are excluded only from the framing: they remain in the polynomial and in the iteration, and part of their basins appears in the picture. The framing rule is a visualization convention, not a property of the polynomial.
+
+\emph{Color and brightness.} Let $k$ be the index, counted from 0, of the step
+at which the criterion was met, and $\Delta$ that step. For a simple root, the
+smoothed count is $\nu=k-\log_2 q$, with $q=\log|\Delta|/\log(10^{-10}R)$
+clipped to $[1,2^{3/2}]$; for a root of multiplicity $m$, it is
+$\nu=k-\min\bigl\{1,\log\bigl(10^{-10}R/|\Delta|\bigr)/\log\bigl(m/(m-1)\bigr)\bigr\}$.
+With $\nu_0$ the second percentile of $\nu$ in the basin, the brightness
+parameter is $t=1-\exp\bigl(-\max(\nu-\nu_0,0)/6\bigr)$, and the color goes
+from the light tone of the basin ($t=0$) to the ink tone as $t\to1$, by
+interpolation in OKLab space. Without normalization, as in
+Fig.~9b, a single $\nu_0$ is used for the whole image. Basin
+colors have fixed lightness and chroma in OKLCH space (0.88 and 0.075), and
+their hues follow the angular order of the roots around the center.
+
+\emph{Critical points.} The article calls \emph{free critical points} the zeros
+of $p''$ that are not zeros of $p$ or of $p'$. Table~\ref{tab:s3} calls them
+\emph{regular free critical points}, to distinguish them from the
+\emph{critical poles}, the zeros of $p'$ of multiplicity $\mu\ge2$ that are not
+roots of $p$. At a critical pole, $N_p$ has a pole of order $\mu$ and local
+degree $\mu$, and it counts as $\mu-1$ critical points. A zero of multiplicity
+$\mu$ of $p'$ is a zero of multiplicity $\mu-1$ of $p''$, so critical poles also
+appear among the zeros of $p''$, but there the formula $N_p'=p\,p''/p'^2$ does
+not hold. A multiple root of $p$ is not a critical point of $N_p$, since
+$N_p'(\zeta)=1-1/m\neq0$. When the roots of $p$ are simple and $p'$ has no
+multiple zeros, the count is direct: $d$ roots and $d-2$ zeros of $p''$. For
+01/01/2000, $k=4$, and the six critical points are the three simple roots of
+$z^3+z+2$ and the three nonzero zeros of $p''(z)=6z(5z^3+2z+2)$; the zero $z=0$
+of $p''$ is the triple root, which is not critical. The only date with a
+critical pole is 11/02/2016, with $p(z)=z^7+z^6+2z^4+2z^3+z+6$:
+$p'(z)=(z+1)^2(z^2-z+1)(7z^2-z+1)$ and $p(-1)=5$, so that $z=-1$ is a double
+pole of $N_p$, whose orbit is exactly $-1\mapsto\infty\mapsto\infty$.
+The critical poles are the irreducible factors of
+$\gcd(p',p'')$ that do not divide $p$; their multiplicity in $p'$ gives the
+order of the pole. The regular free critical points are the zeros of the
+polynomial obtained from $p''$ by removing all factors it has in common with
+$p\,p'$. For each date, the total number of critical points, counted with
+multiplicity, is $2k-2$. Only the regular points are iterated numerically,
+starting from approximations with 30 digits, with the stopping criterion
+$|\Delta|<10^{-14}\max(1,\max_j|\zeta_j|)$ and distance less than $10^{-9}$ to
+a root. For 20/11/1924, $\lambda_n$ was computed in double precision
+($n=10^4,10^5,10^6$), in extended precision (\texttt{long double}, $n=10^5$),
+with 40 digits (\texttt{mpmath}, $n=2\times10^4$), and from $c\pm10^{-8}$ and
+$c+10^{-4}$ ($n=10^5$); the runs are in Table~\ref{tab:s4}.
+
+\emph{Why the test of the critical orbits works.} Suppose that the orbit of
+every free critical point converges to a root. By the classification of Fatou
+components due to Fatou and Sullivan, every Fatou component is eventually mapped
+into a periodic one, and a periodic component is part of the immediate basin of
+an attracting or parabolic cycle, or a rotation domain (a Siegel disk or a
+Herman ring); wandering components do not exist, by Sullivan's theorem. An
+attracting cycle other than the roots would contain a critical point in its
+immediate basin, by Fatou's theorem (Theorem~2 of the article); that point could
+be neither a root, which is fixed, nor a free critical point, whose orbit
+converges to a root, nor a critical pole, which lies in the Julia set. A
+parabolic cycle would likewise attract the orbit of some critical point, which
+is again impossible. The boundary of a rotation domain is an infinite subset of
+the Julia set contained in the closure of the critical orbits, and here that
+closure meets the Julia set only in the finite set formed by the critical poles
+and $\infty$. Hence the Fatou set of $N_p$ is exactly the union of the basins of
+the roots. The references are those of the article: Carleson and Gamelin,
+\emph{Complex Dynamics} (1993); Milnor, \emph{Dynamics in One Complex
+Variable} (2006); and Sullivan, \emph{Annals of Mathematics} 122 (1985).
+
+\emph{Isolated roots.} Of the 38 dates, 14 have $c_1/c_0\ge3.5$, and the
+framing rule classifies one of their roots as isolated; 13 of them fall under
+Proposition~1. The exception is 14/09/2015, whose isolated root, $-4.43$, is
+real, but day 14 escapes the estimate of the proposition (Table~\ref{tab:s2}).
+
+\emph{Mandelbrot's date.} For 20/11/1924, the real root of $p$ is $-1.3169$,
+and the real poles of $N_p$ are $-0.9730$ and $-0.1130$. The intervals $K_\pm$ of Proposition~3 are not the smallest possible. Write
+$x_j=N_p^j(c)$. A finer verification with interval arithmetic
+(Table~\ref{tab:s5}) shows that
+$I_-=[x_2,x_4]\subset K_-$ and $I_+=[x_1,x_3]\subset K_+$ satisfy
+$N_p(I_-)=I_+$ and $N_p(I_+)=I_-$, and that $c\in I_-$. All iterates of $c$
+therefore lie in $I_-\cup I_+$; since the endpoints of $I_-$ and $I_+$ are
+themselves iterates, these are the smallest closed intervals containing the
+even and the odd iterates of $c$, respectively. We call them the critical-orbit
+intervals.
+
+\emph{Critical-orbit intervals.} To show that the orbit of $c$ stays in
+$I_-=[x_2,x_4]$ and $I_+=[x_1,x_3]$, we isolated $c$ by Sturm sequences in an
+interval of width less than $10^{-40}$, enclosed $x_1,\dots,x_5$ in intervals of
+width less than $10^{-36}$ by interval arithmetic with 80 digits
+(\texttt{mpmath.iv}), converted the endpoints, without rounding, into rational
+numbers, and verified by exact root counting and exact comparisons that $p$ and
+$p'$ have no zeros on rational intervals $J_\pm\supset I_\pm$, that $p''$ has
+no zeros on $J_+$ and only the simple zero $c$ on $J_-$, and that
+$x_2<c<x_4$, $x_1<x_3$, and $x_5<x_3$. These facts give $N_p(I_+)=I_-$ by
+monotonicity and $N_p(I_-)=[x_1,\max(x_3,x_5)]=I_+$, since $c$ is a minimum.
+Table~\ref{tab:s5} summarizes this verification; the exact data are
+in the file \texttt{results/orbit\_intervals\_certificate.json} of the code repository.
+
+\emph{Variations.} The programs also allow variations of the construction: changing the order of the digits to YYYYMMDD;
+magnifying a stretch of the real axis for a date without real roots; or
+replacing the Newton step by the relaxed step $z_{k+1}=z_k-a\,p(z_k)/p'(z_k)$,
+with complex $a$ close to 1, which turns the superattracting roots into
+attracting fixed points with multiplier $1-a$ and distorts the basins (see the \texttt{README.md} of the code repository).
+
+
+
+% BEGIN TABLES S1-S6 (written by make_supplement.py; do not edit by hand)
 {\small
 \begin{longtable}{@{}l >{\raggedright\arraybackslash}p{5.6cm} l c c c@{}}
 \caption{Dates, polynomials, degree $d$, number $k$ of distinct roots, and multiplicity $m_0$ of the root $z=0$ (0 if $z=0$ is not a root). All other roots are simple (exact verification)}\label{tab:s1}\\
@@ -96,10 +247,10 @@ Date & Occasion & $p(z)$ & $d$ & $k$ & $m_0$\\
 14/09/2015 & Detection of gravitational waves & $z^7+4z^6+9z^4+2z^3+z+5$ & 7 & 7 & 0\\
 11/02/2016 & Announcement of the detection & $z^7+z^6+2z^4+2z^3+z+6$ & 7 & 7 & 0\\
 01/01/2000 & New Year's Day 2000 & $z^6+z^4+2z^3$ & 6 & 4 & 3\\
-30/08/1984 & Personal date (author's birth) & $3z^7+8z^4+z^3+9z^2+8z+4$ & 7 & 7 & 0\\
-03/07/1986 & Personal date & $3z^6+7z^4+z^3+9z^2+8z+6$ & 6 & 6 & 0\\
-27/04/1952 & Personal date & $2z^7+7z^6+4z^4+z^3+9z^2+5z+2$ & 7 & 7 & 0\\
-15/08/1950 & Personal date & $z^7+5z^6+8z^4+z^3+9z^2+5z$ & 7 & 7 & 1\\
+30/08/1984 & Birth of the author & $3z^7+8z^4+z^3+9z^2+8z+4$ & 7 & 7 & 0\\
+03/07/1986 & Birth of the author's wife & $3z^6+7z^4+z^3+9z^2+8z+6$ & 6 & 6 & 0\\
+27/04/1952 & Birth of the author's father & $2z^7+7z^6+4z^4+z^3+9z^2+5z+2$ & 7 & 7 & 0\\
+15/08/1950 & Birth of the author's mother & $z^7+5z^6+8z^4+z^3+9z^2+5z$ & 7 & 7 & 1\\
 \bottomrule
 \end{longtable}
 
@@ -224,8 +375,8 @@ double & $c+10^{-4}$ & $10^{5}$ & $0.1845$ & [$-0.7622$, $0.2005$]\\
 smallest closed intervals that contain the even and the odd iterates of $c$, respectively.
 Validated enclosures of $x_j=N_p^j(c)$ ($x_0=c$), given by midpoint and radius, and result of
 each exact check. The exact rational endpoints, the isolating intervals, the Sturm counts, and
-the bounds for each inequality are in the file \texttt{certificado\_mandelbrot.json} of
-Online Resource~2}
+the bounds for each inequality are in the file
+\texttt{results/orbit\_intervals\_certificate.json} of the code repository}
 \label{tab:s5}
 \begin{tabular}{@{}c@{}}
 \begin{tabular}{@{}l r r@{}}
