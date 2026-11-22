@@ -2,7 +2,7 @@
 
 The public companion website for *Birthday Polynomials and the Boundaries of Newton's Method* by Americo Cunha Jr.
 
-**Website:** https://americocunhajr.github.io/BirthdayFractal/
+**Website:** https://americocunha.org/BirthdayFractal/
 
 ## Concept
 
