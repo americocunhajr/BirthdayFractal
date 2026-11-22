@@ -21,20 +21,6 @@ This repository publishes a lightweight, dependency-free **interactive browser e
 - Browse the 38 historical and personal dates considered in the paper.
 - Responsive dark interface; no server or JavaScript framework required.
 
-## Local preview
-
-Serve the files over HTTP (required for the Web Worker):
-
-```bash
-python -m http.server 8000
-```
-
-Visit http://localhost:8000/ .
-
-## GitHub Pages
-
-A GitHub Actions workflow in `.github/workflows/pages.yml` deploys the site on changes to `main`. If GitHub Pages is not already enabled, choose **GitHub Actions** as the build/deployment source under **Settings → Pages**.
-
 ## Reproducibility
 
 The JavaScript viewer ([`app.js`](app.js), [`worker.js`](worker.js)) runs entirely in the browser. The **updated English-language scientific Python package** is in [`PythonCode/`](PythonCode/), replacing the previous Portuguese-language version. It includes research-grade figure generators, exact certificates, numerical audits, the 38-date dataset, and supplementary LaTeX source.
@@ -53,6 +39,21 @@ Americo Cunha Jr. “Birthday Polynomials and the Boundaries of Newton's Method.
   year   = {2026}
 }
 ```
+
+## License
+
+**MeanMedianLab** is released under the MIT license, consistent with several of the author's software repositories. See [LICENSE](LICENSE) for details.
+
+<img src="logo/mit_license_red.png" width="10%"> 
+
+### Institutional support
+
+<img src="logo/logo_lncc.png" width="25%"> &nbsp; &nbsp; &nbsp; <img src="logo/logo_uerj.png" width="10%"> 
+
+### Funding
+
+<img src="logo/faperj.png" width="25%"> &nbsp; &nbsp; <img src="logo/cnpq.png" width="20%"> &nbsp; &nbsp; <img src="logo/capes.png" width="10%">
+
 
 ## Author
 
