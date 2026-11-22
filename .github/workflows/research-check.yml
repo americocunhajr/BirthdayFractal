@@ -3,11 +3,11 @@ on:
   push:
     branches: [main]
     paths:
-      - 'research/**'
+      - 'PythonCode/**'
       - '.github/workflows/research-check.yml'
   pull_request:
     paths:
-      - 'research/**'
+      - 'PythonCode/**'
       - '.github/workflows/research-check.yml'
 permissions:
   contents: read
@@ -27,7 +27,7 @@ jobs:
           import ast, csv, json
           from pathlib import Path
 
-          root = Path('research/ESM_2')
+          root = Path('PythonCode')
           scripts = list(root.rglob('*.py'))
           assert len(scripts) == 14, len(scripts)
           for script in scripts:
@@ -39,7 +39,7 @@ jobs:
           print('14 Python scripts, JSON records, and 38 dates verified')
           PY
       - name: Recompute the two exact certificates
-        working-directory: research/ESM_2
+        working-directory: PythonCode
         run: |
           python certifica_aprisionamento.py
           python certifica_mandelbrot.py

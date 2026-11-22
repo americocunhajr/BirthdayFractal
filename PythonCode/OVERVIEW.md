@@ -1,6 +1,6 @@
 # Research code and reproducibility
 
-The [Online Resource 2 source package](ESM_2/) accompanies the manuscript *Birthday Polynomials and the Boundaries of Newton’s Method* by Americo Cunha Jr., submitted to *The Mathematical Intelligencer* (under review).
+The [Online Resource 2 source package](./) accompanies the manuscript *Birthday Polynomials and the Boundaries of Newton’s Method* by Americo Cunha Jr., submitted to *The Mathematical Intelligencer* (under review).
 
 This directory contains the **original Python research programs**, the supplementary LaTeX source, the 38-date CSV, audit results, and machine-readable exact certificates supplied by the author. It is distinct from the approximate **JavaScript** fractal generator in the repository root.
 
@@ -8,13 +8,13 @@ This directory contains the **original Python research programs**, the supplemen
 
 ```bash
 git clone https://github.com/americocunhajr/BirthdayFractal.git
-cd BirthdayFractal/research/ESM_2
+cd BirthdayFractal/PythonCode
 python -m pip install -r requirements.txt
 python certifica_aprisionamento.py
 python certifica_mandelbrot.py
 ```
 
-See **[ESM_2/README.md](ESM_2/README.md)** for the full command sequence (figures, exact certificates, Tables S1–S6, numerical audits, and per-date rendering), dependencies, output-file map, and Portuguese-to-English glossary.
+See **[README.md](README.md)** for the full command sequence (figures, exact certificates, Tables S1–S6, numerical audits, and per-date rendering), dependencies, output-file map, and Portuguese-to-English glossary.
 
 ## Scientific scope and validation
 

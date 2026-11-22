@@ -64,13 +64,13 @@ the packages `lmodern`, `cm-super`, `helvet`, and `sansmath`.
 
 ## Reproduction, in order
 
-All commands run in this `research/ESM_2/` folder, unless otherwise indicated.
+All commands run in the `PythonCode/` folder, unless otherwise indicated.
 
 From a fresh clone of the BirthdayFractal repository:
 
 ```bash
 git clone https://github.com/americocunhajr/BirthdayFractal.git
-cd BirthdayFractal/research/ESM_2
+cd BirthdayFractal/PythonCode
 python -m pip install -r requirements.txt
 ```
 
