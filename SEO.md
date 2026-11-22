@@ -17,3 +17,7 @@ The [social preview](og-preview.png) is an illustrative cubic Newton fractal, no
 For a GitHub Pages project at `/BirthdayFractal/`, search crawler robots rules are taken from the **host-root** `https://americocunhajr.github.io/robots.txt`, *not* a project-level `/BirthdayFractal/robots.txt`. We do not add a misleading project-level robots.txt or promise special AI search rankings. The content is already static HTML, so crawlers can read these notes without running JavaScript.
 
 To add a date page, update the sitemap and the homepage's linked date story collection. The academic software listing is in https://americocunha.org/software/ and the source and documentation are in the public GitHub repository.
+
+## Publication and validation
+
+In **Settings → Pages**, select **Deploy from a branch** → `main` → `/ (root)`. GitHub's built-in Pages workflow publishes the site. The independent **Validate BirthdayFractal website** workflow checks JavaScript syntax, canonical URLs, JSON-LD, the sitemap, internal links, and the social image. Keeping these jobs separate avoids duplicate deployment artifacts.
